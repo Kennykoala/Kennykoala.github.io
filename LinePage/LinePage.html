@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          /* width: auto;
+          height: auto;
+          font-style: normal;
+          font-family: 'Noto Sans JP'; */
+          /* border-right: solid #b12f40 1px;   */
+        }      /*CSS reset*/
+        .item-group{
+            width: 1800px;
+            margin: auto;            
+        }
+        .item{
+            display: flex;         /*<div class="pic"> . <div class="txt">左右並排*/
+            align-items: center;  /*圖片居中*/
+            padding: 0px;        /*上下距離*/            
+        }
+
+        .item:nth-child(odd){
+            flex-direction: row-reverse;
+        }
+
+        .pic{
+            width: 900px;
+            margin: 150px;  
+     
+        }
+        .pic img{
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .txt{
+            width: 500px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .txt:nth-child(odd){
+            margin: 200px;
+        }
+        .txt:nth-child(even){
+            margin: -220px;
+        }
+        
+        .txt img{
+            border-radius: 15px;
+            max-width: 80px;
+            max-height: 80px;
+        }
+
+        .txt h1{
+            font-size: 40px;
+            line-height: 85px;
+            font-weight: bold;            
+        }
+
+        .txt h2{
+            font-size: 18px;
+            line-height: 36px;
+            color: #07b53b;
+            font-weight: 800;
+        }
+
+        .txt p{
+            font-size: 16px;
+            line-height: 28px;
+            color: #777777;
+            font-weight: bold;
+        }
+        .siteLink{
+            text-align: right;
+            width: 150px; 
+            border:1px solid #B3B3B3;   
+            border-radius: 4px;         
+        }
+
+        .siteLink a{
+            color:rgb(20, 14, 14);
+            text-decoration: none;
+            display: inline-block;
+            padding: 16px 20px 16px 46px;
+            background-color: white;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 4px;   
+        }
+
+        .siteLink a:hover{
+            background-color: rgb(66, 179, 66);
+            color: white;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="item-group">
+        <div class="item">
+            <div class="pic">
+                <img src="https://line.me/static/fc6a34517fc06ee4b2c097f2de95cf17/af5ac/0386be561893eaf8b3f444a3b7206b7a.png">   
+            </div>
+            <div class="txt">
+                <img src="linetoday.png" alt="">
+                <h1>LINE TODAY</h1>
+                <h2>隨點隨看 生活快充</h2>
+                <p>最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題<br/>永不斷線，LINE TODAY陪伴您的每一天！</p>
+                <br/><br/><br/>
+                <div class="siteLink">
+                    <a href="https://today.line.me/tw/v2/tab/top" target="_blank">其他詳細資訊</a>
+                </div>         
+            </div>
+        </div>    
+        <div class="item">
+            <div class="pic">
+                <img src="https://line.me/static/29e4f0744025fe17447db54a9b8a845c/af5ac/1bcc8626da1f1f11e331664223c7feba.png">   
+            </div>
+            <div class="txt">
+                <img src="linepost.png" alt="">
+                <h1>LINE貼文串</h1>
+                <h2>探索樂趣，分享生活</h2>
+                <p>在貼文串追蹤你的最愛．有感內容不錯過。<br/>打造你的個人閱知頻道，探索生活大小事。<br/>分享所見所聞，串連人際、啟發創意的無限可能！</p>
+                <br/><br/><br/>
+                <div class="siteLink">
+                        <a href="https://timeline.line.me/" target="_blank">其他詳細資訊</a>
+                </div>    
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://line.me/static/19dd7975bdc5e84a47db26e8a36159b2/af5ac/91f2093486f63cacb05d3f0475e08153.png">   
+            </div>
+            <div class="txt">
+                <img src="linepay.png" alt="">
+                <h1>LINE Pay</h1>
+                <h2>付款、轉帳、生活繳費，輕鬆簡單又便利！</h2>
+                <p>付款簡單又便利，還能輕鬆轉帳給LINE好友，動動手指輕鬆<br/>完成日常生活各種帳單繳費，免出門省時又省力。</p>
+                <br/><br/><br/>
+                <div class="siteLink">
+                        <a href="https://pay.line.me/portal/tw/main" target="_blank">其他詳細資訊</a>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://line.me/static/c18b76c50015ddb41ecfa6f2c7b23165/af5ac/43f462d7375cd4867e6cd565756b5ac2.png">   
+            </div>
+            <div class="txt">
+                <img src="lineshopping.png" alt="">
+                <h1>LINE購物</h1>
+                <h2>先LINE購物再購物</h2>
+                <p>涵蓋各大購物、拍賣、精品、通路、旅遊、及票券商店，輕<br/>鬆貨比五百家，一站比價三千萬筆商品，再享LINE POINTS<br/>回饋賺不停！</p>
+                <br/><br/><br/>  
+                <div class="siteLink">
+                        <a href="https://buy.line.me/" target="_blank">其他詳細資訊</a>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://line.me/static/85cfa8aedaaafafffb894438ad671f73/af5ac/4d57ad23f14cddc09d91ae3fc10886ae.png">   
+            </div>
+            <div class="txt">
+                <img src="linetv.png" alt="">
+                <h1>LINE TV</h1>
+                <h2>共享追劇生活</h2>
+                <p>和朋友一起追劇，不錯過最新、最熱門、最潮的話題大劇，<br/>即時分享娛樂影音，展開精彩生活故事，LINE TV是您的追<br/>劇第一選擇！</p>
+                <br/><br/><br/>
+                <div class="siteLink">
+                        <a href="https://www.linetv.tw/" target="_blank">其他詳細資訊</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
