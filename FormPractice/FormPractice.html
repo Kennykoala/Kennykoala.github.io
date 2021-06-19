@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <style>
+        input[type="number"]:out-of-range{
+            color: red;
+        }
+
+        input[type="number"]:in-range{
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- for對應到type -->
+    <!-- <form action="">
+        <label for="user_name">姓名</label>
+        <input id="user_name" type="text">
+    </form> -->
+
+    <!-- 第二種寫法 -->
+    <!-- <form action="">
+        <label>
+            姓名
+            <input id="user_name" type="text">
+        </label>
+    </form> -->
+
+
+    <form action="">
+        <div>
+            <label for="user_name">姓名</label>
+            <input id="user_name" type="text" required="required">
+        </div>
+        <div>
+            <label for="password">密碼</label>
+            <input id="password" type="password" required="required">
+        </div>
+        <div>
+            <label for="age">年齡</label>
+            <input id="age" type="number" min="18" max="60" required="required">
+        </div>
+        <div>
+            <label for="telnum">電話</label>
+            <input id="telnum" type="tel" required="required">
+        </div>
+        <div>
+            <label for="mail">信箱</label>
+            <input id="mail" type="email" required="required">
+        </div>
+        <div>
+            <label for="web">網站</label>
+            <input id="web" type="url" required="required">
+        </div>
+        <div>
+            <label for="birth">生日</label>
+            <input id="birth" type="date" required="required">
+        </div>
+        <div>
+            <label for="mth">第幾個月</label>
+            <input id="mth" type="month" required="required">
+        </div>
+        <div>
+            <label for="wk">第幾周</label>
+            <input id="wk" type="week" required="required">
+        </div>
+        <div>
+            <label for="time">時間</label>
+            <input id="time" type="time" required="required">
+        </div>
+        <div>
+            <label for="upload">上傳</label>
+            <input id="upload" type="file" required="required">
+        </div>
+        <div>
+            <label for="search">搜尋</label>
+            <input id="search" type="search" required="required">
+        </div>
+        <div>
+            <label for="color">色彩</label>
+            <input id="color" type="color" required="required">
+        </div>
+        <div>
+            <label for="span">區間</label>
+            <input id="span" type="range" required="required">
+        </div>
+        <div>
+            興趣
+            <label for="jogging">
+                <input id="jogging" type="checkbox" required="required">
+                跑步
+            </label>
+            <label for="basketball">
+                <input id="basketball" type="checkbox" required="required">
+                打籃球
+            </label>
+            <label for="nightclub">
+                <input id="nightclub" type="checkbox" required="required">
+                上夜店
+            </label>
+            <label for="other">
+                <input id="other" type="checkbox" required="required">
+                其他
+                <label for="add"></label>
+                <input id="add" type="text" required="required">
+            </label>
+        </div>
+        <div>
+            性別
+            <label for="male">
+                <input id="male" type="radio" name="sex" required="required">    <!--name只要是一樣的，就會是單選 -->
+                男
+            </label>
+            <label for="female">
+                <input id="female" type="radio" name="sex" required="required">    <!--name只要是一樣的，就會是單選 -->
+                女
+            </label>
+        </div>
+        <div>
+            國籍
+            <label>
+                <select name="nation">
+                    <option value="TW">台灣</option>
+                    <option value="US">美國</option>
+                    <option value="DE">德國</option>
+                    <option value="FR">法國</option>
+                    <option value="HK">香港</option>
+                    <option value="JP">日本</option>
+                    <option value="KR">韓國</option>
+                    <option value="UK">英國</option>
+                    <option value="other">其他</option>                    
+                </select>
+            </label>
+        </div>
+
+        <div>
+            <input type="submit">
+            <input type="reset">
+            <input type="button" value="add button">
+            <button><i class="fas fa-plus"></i>Add</button>
+        </div>
+    </form>
+
+
+</body>
+</html>
