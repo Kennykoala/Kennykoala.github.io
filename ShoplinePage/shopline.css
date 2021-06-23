@@ -1,0 +1,561 @@
+body{
+    font-family: 'Notosans2', 'Open-Sans', Roboto, 'Noto Sans TC', sans-serif;
+    /* box-sizing: border-box; */
+}
+
+header{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    margin: auto;
+}
+
+.menu-guide{
+    background-color: #00142d;
+    font-size: 0;    
+    width: 100%;    
+    padding: 3px 0;
+    width: 100%;
+    height: 100%;
+}
+.menu-guide nav{
+    position: relative;
+    width: auto;
+    height: auto;
+    left: 80%;
+}
+.menu-guide a{
+    display: inline-block;    
+    padding: 10px 20px;
+    font-size: 14px;
+    color:white;
+    text-decoration: none;
+    background-color: #00142d;
+}
+.menu-guide a:hover{
+    color:#007bff;
+}
+
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;    
+    height: 35px;
+    padding: 30px 0;
+    background-color:white;
+    font-size: 0;   
+}
+.menu nav{
+    display: flex;
+    position: relative;
+    width: auto;
+    height: auto;
+    align-items: center;
+    left: 8%;
+}
+.menu .pic{
+    padding:0 40px;
+}
+.menu .submenu{
+    display: inline-block;    /*把<a>的padding撐高*/
+    font-size: 15px;
+    background-color: transparent;
+    color:#324255;
+    text-decoration: none;
+    padding: 0px 10px;   
+    border-bottom: none;
+}
+.menu .free{
+    position: relative;   
+    width: auto;
+    height: auto;
+    text-align: center;
+    left: 155%;
+    background-color: #0061ff;
+    color: white;
+    border-radius: 30px;
+    font-size: 14px;
+    text-decoration: none;       
+    width: 90px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.menu nav a:hover{
+    color: #007bff;
+}
+.menu .free:hover{
+    background-color:rgb(50, 78, 160) ;
+    color: white;
+}
+.menu .pic{
+    width: 160px;
+}
+
+
+.banner img{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100px;
+}
+
+
+.intro{
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    padding: 60px 25px 0;
+}
+.intro h1{
+    font-size: 200%;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 0 30px;
+}
+.intro p{
+    font-size: 100%;
+    font-weight: normal;
+    color: #324255;
+    line-height: 1.8;
+}
+
+
+
+.item-group{
+    margin: auto;
+    width:100%;
+    max-width: 1400px;
+    padding: 0 30px;
+    box-sizing: border-box; 
+}
+.item-group .item{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+    padding:100px 0px;       
+    border-bottom: 1px solid rgb(223, 219, 219);
+}
+.item-group .item:nth-child(odd){
+    flex-direction: row-reverse;
+}
+.item-group .item:last-child{
+    border-bottom: none; 
+}
+.item-group .pic{
+    width: 50%;    
+}
+.item-group .pic img{
+    width: 100%;
+}
+.item-group .txt{
+    width: 50%; 
+}
+.item-group .txt h2{
+    font-size: 200%;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 0 50px;
+}
+.item-group .txt p{
+    font-size: 100%;
+    font-weight: normal;
+    color: #324255;
+    line-height: 1.8;
+    margin: 0 0 25px;
+    text-align: justify;
+}
+.item-group .txt ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0 25px;
+    padding: 0;
+    color: #00142D;
+}
+.item-group .txt li{
+    width: 50%;
+    line-height: 2;    
+}
+.item-group .txt .checkmark{
+    display: inline-block;
+}
+.item-group .txt .checkmark::after {
+    content: '✓';
+    background: #deebff;
+    border-radius: 50%;
+}
+
+.item-group .link a{
+    color:#0061ff;
+    text-decoration: none;
+}
+
+
+.additional{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    padding: 70px 0px 25px;
+    background-color: #f4f5f7;
+    box-sizing: border-box; 
+}
+.additional h2{
+    font-size:220% ;
+    font-weight: bold;
+    margin: 0 0 50px;
+    text-align: center;
+}
+.additional .service-group{
+    display: flex;
+    justify-content: space-evenly;
+}
+.additional .service{
+    width: 300px;
+    height: 240px;
+    margin-bottom: 60px;
+}
+.additional .pic{
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    margin: 0 90px 30px;    
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;    
+}
+.additional .pic img{
+    width: 72px;
+    vertical-align: middle;
+}
+.additional .txt h3{
+    font-size: 125%;
+    height: 35px;
+    text-align: center;
+}
+.additional .txt p{
+    font-size: 93%;
+    height: 55px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+
+.wrap{
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    background-color: #244680; 
+}
+.wrap .item{
+    display: flex;
+    position: relative;
+}
+.wrap .txt h2{
+    font-size: 40px;
+    color: white;
+    line-height: 1.5;
+    margin-bottom: 50px;
+    margin-left: 30%;
+    width: 100%;
+}
+.wrap .txt a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #0061ff;
+    color: white;
+    border-radius: 30px;
+    width: 52%;
+    height: 50px;    
+    line-height: 50px;
+    text-align: center;
+    margin-left: 30%;
+    
+}
+.wrap .txt a:hover{
+    background-color: #2065af;
+}
+/* .wrap .pic{
+    width: 10%; 
+    height: 30%; 
+    position: absolute;
+    z-index: 0;
+    right: -152%;
+    bottom: -42%;
+    pointer-events: none;
+} */
+
+
+
+.footer{
+    margin: auto;
+    width:100%;
+    height: 100%;
+    padding: 0px auto;
+    box-sizing: border-box;
+    background-color:#172B4D; 
+}
+.footer .footer-group{
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: top;  
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(223, 219, 219);
+    padding-top: 100px;
+    padding-bottom: 150px;    
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.footer h3{
+    margin: 0 0 45px;
+    color: #deebff;
+    font-weight: bold;
+    font-size: 17px;
+}
+.footer a{
+    text-decoration: none;
+    color: #748094;
+    font-size: 94%;
+    line-height: 2.3;
+}
+.footer a:hover{
+    color: #deebff;
+}
+.footer .footer-bottem{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;   
+    padding-top: 50px;
+    padding-bottom: 50px;        
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.footer .map ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer .map a{
+    font-size: 87.5%;
+    color: white;    
+}
+.footer .copyright{
+    font-size: 87.5%;
+    color: white;
+    line-height: 1.8;
+}
+.footer span{
+    display: block;
+    font-size: 1px;
+    color: red;
+    position: relative;
+}
+
+
+.full-screen{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 380px;
+    height: 240px;
+    z-index: 10;
+    background-image:url("https://img.shoplineapp.com/media/image_clips/606d791b511e9b001daedae0/original.png?1617787162");
+    display: flex;
+}
+.full-screen .txt{
+    width: 100%;
+    max-width: 380px;
+    max-height: 210px;
+    padding-left: 15px;
+    padding-top: 45px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+}
+.full-screen .txt h2{
+    line-height: 2;
+    font-size: 20px;
+}
+.full-screen .txt p{
+    line-height: 1.5;
+}
+.full-screen .banner{
+    position: relative;
+    width: 100%;
+    padding-left: 15px;
+}
+.full-screen .banner a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgba(231, 94, 52, 0.897);
+    color: white;
+    border-radius: 30px;
+    width: 180px;
+    height: 30px;    
+    line-height: 30px;
+    text-align: center;
+}
+.full-screen img{
+    width: 125px;
+    position: absolute;
+    left: 62%;
+    top: 26%;
+}
+.full-screen .btn-close{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color:white;
+    color: black;
+    text-decoration: none;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .txt li::before,
+.txt li::after{
+    content: '';
+    display: block;
+    position: absolute;
+}
+.txt li::before{
+    width: 19px;
+    height: 19px;
+    background-color: #DEEBFF;
+    border-radius: 50%;
+    left: 0;
+    top: 6px;
+}
+.txt li::after{
+    width: 9px;
+    height: 5px;
+    border: 1px solid #005eef;
+    border-width: 0 0 1px 1px;
+    transform: rotate(-45deg);
+    left: 5px;
+    top: 12px;
+} */
+
+
+
+
+/* .link a:hover{
+    padding: 10px 50px;
+} */
+
+/* .btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    text-decoration: none;
+    color: #fff;
+    transition: padding .3s 0s ease, background-color 1s 1s;
+}
+.btn:hover{
+    padding: 10px 30px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+/* .menu-top .menu img{
+    width: 100%;
+    vertical-align: middle;
+} */
+
+
+/* img{     /*設定banner設定banner下方不要有空隙
+    vertical-align: bottom;      
+}*/ 
+/*.footer{
+    background-color: #333;
+    color: #aaa;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/*.item-group共用寬，使之滿版*/
+/* .item-group{                      
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+} */
+/*.banner img{
+    width: 100%;
+}
+.title{
+    margin: 0 0px 20px;
+    padding: 30px 10px;
+    background-color: #ccc;
+}
+.title h2{
+    text-align: center;
+    font-size: 46px;
+}
+.title p{
+    text-align: center;
+    font-size: 22px;
+}
+.item{                              for手機顯示
+    margin: 0 10px 40px;
+}
+/*.item .text h3{                  .item h3也可以
+    font-size: 24px;
+    text-align: center;
+}
+.item .pic img{
+    width: 100%;
+}
+
+.service{
+    margin: 60px 0;
+    background-color: #ffa;
+}
+
+@media screen and (min-width:768px) {       
+
+    /* .item-group{
+        display: flex;
+    } 
+    .service .item{
+        display: flex;
+        margin-bottom: 0;     讓service黃底色部分下緣能切齊圖片(Amos要我們自己想)
+    }
+    .service .item .pic,
+    .service .item .text{
+        width: 50%;
+        margin: 0;
+    }
+    .service .item .text{
+        display: flex;
+        padding: 0 20px;
+        box-sizing: border-box;
+        flex-direction: column;   /*文字轉直排
+        justify-content: center;
+        
+    }
+}*/
