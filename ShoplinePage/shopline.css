@@ -64,9 +64,36 @@ header{
     background-color: transparent;
     color:#324255;
     text-decoration: none;
-    padding: 0px 10px;   
+    padding: 0px 20px;   
     border-bottom: none;
+    position: relative;
 }
+
+.menu .submenu::before{
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: '\f107';
+    font-size: 14px;
+    position: absolute;
+    left: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.menu .submenu:hover{
+    color: #007bff;
+}
+
+.menu .submenu:hover::before{
+    position: absolute;
+    left: 90%;
+    top: 0%;
+    -moz-transform:scaleY(-1);
+    -webkit-transform:scaleY(-1);
+    -o-transform:scaleY(-1);
+    transform:scaleY(-1);
+
+} 
+
 .menu .free{
     position: relative;   
     width: auto;
@@ -83,9 +110,7 @@ header{
     line-height: 35px;
 }
 
-.menu nav a:hover{
-    color: #007bff;
-}
+
 .menu .free:hover{
     background-color:rgb(50, 78, 160) ;
     color: white;
