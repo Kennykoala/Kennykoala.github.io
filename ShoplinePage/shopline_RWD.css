@@ -1,0 +1,565 @@
+body{
+    font-family: 'Notosans2', 'Open-Sans', Roboto, 'Noto Sans TC', sans-serif;
+    /* box-sizing: border-box; */
+}
+
+
+#menu_control {
+    position: absolute;
+    /*讓checkbox消失*/
+    z-index: -2;
+    opacity: 0;
+    /*確保checkbox永遠消失*/
+}
+
+.header {
+    height: 50px;
+    background-color:white;
+    position: relative;
+}
+
+.logo {
+    width: 60px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.logo a {
+    display: block;
+    height: 40px;    
+}
+
+.logo img {
+    display: block;
+    /*用vertical-aling:top也可以*/
+    width: 200%;
+    padding: 15px 10px;   
+}
+
+.menu_btn {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    display: block;
+    /*label是inline*/
+    position: absolute;
+    /*須和父層header的position: relative;搭配使用*/
+    top: 5px;
+    right: 10px;
+}
+
+.menu_btn span {
+    /*讓文字"選單"消失*/
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    display: block;
+    overflow: hidden;
+}
+
+.menu_btn::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 6px;
+    width: 28px;
+    background-color: black;
+    top: 0;
+    /*垂直置中*/
+    bottom: 0;
+    /*垂直置中*/
+    margin: auto;
+    /*垂直置中*/
+    box-shadow: 0px 8px 0px black,
+                0px -8px 0px black;
+}
+
+nav {
+    width: 100%;
+    height: calc(100vh - 50px);
+    /*vh視窗高*/
+    background-color: #ffffff;
+    position: absolute;
+    /*定位在header裡面*/
+    top: 50px;
+    right: -100%;
+    /*用transfer也可以讓他暫時消失*/
+    transition: .5s;
+    box-sizing: border-box;
+    padding: 25px 35px 30px;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 20px 20px;
+    border-bottom: 1px solid gray;
+    /* position: relative; */
+}
+
+
+/* header .pseudo::bafore {
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f107';
+    font-size: 14px;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    transform: translateY(-50%);
+} */
+
+#menu_control:checked~.header nav {
+    left: 100%;
+}
+
+
+
+
+.banner img{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100px;
+}
+
+
+.intro{
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    padding: 0 25px;
+}
+.intro h1{
+    font-size: 160%;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 0 30px;
+}
+.intro p{
+    font-size: 92%;
+    font-weight: normal;
+    color: #324255;
+    line-height: 1.8;
+    margin-bottom: 20%;
+}
+
+
+
+.service .pic img{
+    width: 100%;
+    vertical-align: middle;
+}
+.service .txt h2{
+    font-size: 160%;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 0 50px;
+}
+.service .txt p{
+    font-size: 92%;
+    font-weight: normal;
+    color: #324255;
+    line-height: 1.8;
+    margin: 0 0 25px;
+    text-align: justify;
+}
+.service .txt ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0 25px;
+    padding: 0;
+    color: #00142D;
+}
+.service .txt li{
+    width: 100%;
+    line-height: 2.5;
+    font-size: 92%;    
+}
+.service .txt .checkmark{
+    display: inline-block;
+}
+.service .txt .checkmark::after {
+    content: '✓';
+    background: #deebff;
+    border-radius: 50%;
+}
+
+.service .link a{
+    color:#0061ff;
+    text-decoration: none;
+    display: block;
+    padding-bottom: 60px;
+    border-bottom:1px solid rgb(199, 195, 195);
+    font-size: 92%;    
+}
+/* .service .link a + .service .link a{
+    border-bottom:1px solid rgb(199, 195, 195);
+} */
+
+
+
+
+
+
+
+
+
+
+.additional{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    padding: 30px 0px 25px;
+    background-color: #f4f5f7;
+    box-sizing: border-box; 
+}
+.additional h2{
+    font-size:220% ;
+    font-weight: bold;
+    margin: 30px 0 50px;
+    text-align: center;
+}
+.additional .row{
+    display: flex;
+    justify-content: space-evenly;
+}
+.additional .function{
+    width: 50%;
+    height: 100%;
+    margin-bottom: 60px;
+}
+.additional .pic{
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    margin: 0 auto 30px;    
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;    
+}
+.additional .pic img{
+    width: 72px;
+    vertical-align: middle;
+}
+.additional .txt h3{
+    font-size: 100%;
+    height: 35px;
+    text-align: center;
+}
+.additional .txt p{
+    font-size: 85%;
+    height: 55px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+
+
+
+.wrap{
+    min-height: 625px;
+    /* display: flex; */
+    background-color: #244680; 
+    position: relative;
+}
+.wrap .item{
+    display: flex;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    right: 5%;    
+}
+.wrap .txt h2{
+    font-size: 200%;
+    color: white;
+    line-height: 1.5;
+    margin-bottom: 50px;
+    width: 100%;
+
+}
+.wrap .txt a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #0061ff;
+    color: white;
+    border-radius: 30px;
+    width: 80%;
+    height: 50px;    
+    line-height: 50px;
+    text-align: center;    
+}
+.wrap .txt a:hover{
+    background-color: #2065af;
+}
+
+
+
+
+
+
+
+
+
+
+.container.footer{
+    width: 375px;
+    height: 524px;
+    padding: 50px 20px 0px;
+    background-color: #00142D;
+}
+.footer .item{
+    width: 335px;
+    height: 17px;
+    line-height: 17px;
+    padding: 20px 0 19px;
+    border-top: .5px solid rgb(61, 58, 58);
+    color: white;
+}
+.footer .last-footer{
+    border-bottom: .5px solid rgb(61, 58, 58);
+}
+.row{
+    margin: auto;   /*為了不執行grid.css*/
+}
+
+.footer-nav{
+    display: none;
+}
+
+
+.container-bottom{
+    width: 335px;
+    height: 319px;
+    padding: 0px 20px;
+    /* margin-bottom: 95px; */
+    background-color: #00142D;
+}
+
+.row.net{
+    width: 306px;
+    height: 48px;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.sitelink a{
+    display: block;
+    width: 208px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    margin: auto;
+    padding: 7px 0;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+.copyright{
+    color: rgb(155, 150, 150);
+    text-align: center;
+    padding: 8% 0 0;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+@media screen and (min-width:768px) {
+    .menu_btn {
+        display: none;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        background-color: #282923;
+        align-items: center;
+    }
+
+    nav {
+        position: relative;
+        /*因為手機是position: absolute;，桌機則改回相對定位*/
+        left: 0;
+        display: flex;
+        width: auto;
+        height: auto;
+        top: 0;
+        /*可回原始碼debug*/
+        background-color: transparent;
+    }
+
+    nav a {
+        border-bottom: none;
+    }
+
+    
+    .menu-guide{
+        background-color: #00142d;
+        font-size: 0;    
+        width: 100%;    
+        padding: 3px 0;
+        width: 100%;
+        height: 100%;
+    }
+    .menu-guide nav{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 80%;
+    }
+    .menu-guide a{
+        display: inline-block;    
+        padding: 10px 20px;
+        font-size: 14px;
+        color:white;
+        text-decoration: none;
+        background-color: #00142d;
+    }
+    .menu-guide a:hover{
+        color:#007bff;
+    }
+    
+    
+    .menu{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;    
+        height: 35px;
+        padding: 30px 0;
+        background-color:white;
+        font-size: 0;   
+    }
+    .menu nav{
+        display: flex;
+        position: relative;
+        width: auto;
+        height: auto;
+        align-items: center;
+        left: 8%;
+    }
+    .menu .pic{
+        padding:0 40px;
+    }
+    .menu .submenu{
+        display: inline-block;    /*把<a>的padding撐高*/
+        font-size: 15px;
+        background-color: transparent;
+        color:#324255;
+        text-decoration: none;
+        padding: 0px 20px;   
+        border-bottom: none;
+        position: relative;
+    }
+    
+    .menu .submenu::before{
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900; 
+        content: '\f107';
+        font-size: 14px;
+        position: absolute;
+        left: 90%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .menu .submenu:hover{
+        color: #007bff;
+    }
+    
+    .menu .submenu:hover::before{
+        position: absolute;
+        left: 90%;
+        top: 0%;
+        -moz-transform:scaleY(-1);
+        -webkit-transform:scaleY(-1);
+        -o-transform:scaleY(-1);
+        transform:scaleY(-1);
+    
+    } 
+    
+    .menu .free{
+        position: relative;   
+        width: auto;
+        height: auto;
+        text-align: center;
+        left: 25%;
+        background-color: #0061ff;
+        color: white;
+        border-radius: 30px;
+        font-size: 14px;
+        text-decoration: none;       
+        width: 90px;
+        height: 35px;
+        line-height: 35px;
+    }
+    
+    
+    .menu .free:hover{
+        background-color:rgb(50, 78, 160) ;
+        color: white;
+    }
+    .menu .pic{
+        width: 160px;
+    }
+
+
+    .banner{
+        
+    }
+
+}
+
+
+
+@media screen and (min-width:768px) {
+    .service .row{
+        align-items: center;   /*垂直對齊*/
+    }
+    .service .row:nth-child(odd){
+        flex-direction: row-reverse;
+    }
+
+    .service .txt li{
+        width: 50%;
+        line-height: 2;    
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
