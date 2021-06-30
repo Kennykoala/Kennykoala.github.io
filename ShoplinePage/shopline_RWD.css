@@ -112,7 +112,7 @@ nav a {
 } */
 
 #menu_control:checked~.header nav {
-    left: 100%;
+    right: 0%;
 }
 
 
