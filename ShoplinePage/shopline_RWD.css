@@ -4,19 +4,20 @@ body{
 }
 
 
-#menu_control {
-    position: absolute;
-    /*讓checkbox消失*/
-    z-index: -2;
-    opacity: 0;
-    /*確保checkbox永遠消失*/
-}
+
 
 .header {
-    height: 50px;
+    height:50px;
     background-color:white;
-    position: relative;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    box-shadow: 0px 2px 5px #e0dddd;
+    -webkit-box-shadow: 0px 2px 5px #e0dddd;
+    -moz-box-shadow: 0px 2px 5px #e0dddd;
 }
+
+
 
 .logo {
     width: 60px;
@@ -33,95 +34,18 @@ body{
     display: block;
     /*用vertical-aling:top也可以*/
     width: 200%;
-    padding: 15px 10px;   
-}
-
-.menu_btn {
-    width: 40px;
-    height: 40px;
-    background-color: #ffffff;
-    display: block;
-    /*label是inline*/
-    position: absolute;
-    /*須和父層header的position: relative;搭配使用*/
-    top: 5px;
-    right: 10px;
-}
-
-.menu_btn span {
-    /*讓文字"選單"消失*/
-    opacity: 0;
-    width: 1px;
-    height: 1px;
-    display: block;
-    overflow: hidden;
-}
-
-.menu_btn::before {
-    content: '';
-    position: absolute;
-    height: 2px;
-    left: 6px;
-    width: 28px;
-    background-color: black;
-    top: 0;
-    /*垂直置中*/
-    bottom: 0;
-    /*垂直置中*/
-    margin: auto;
-    /*垂直置中*/
-    box-shadow: 0px 8px 0px black,
-                0px -8px 0px black;
-}
-
-nav {
-    width: 100%;
-    height: calc(100vh - 50px);
-    /*vh視窗高*/
-    background-color: #ffffff;
-    position: absolute;
-    /*定位在header裡面*/
-    top: 50px;
-    right: -100%;
-    /*用transfer也可以讓他暫時消失*/
-    transition: .5s;
-    box-sizing: border-box;
-    padding: 25px 35px 30px;
-}
-
-nav a {
-    display: block;
-    text-decoration: none;
-    color: black;
-    padding: 20px 20px;
-    border-bottom: 1px solid gray;
-    /* position: relative; */
-}
-
-
-/* header .pseudo::bafore {
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: '\f107';
-    font-size: 14px;
-    position: absolute;
-    left: 0%;
-    top: 0%;
-    transform: translateY(-50%);
-} */
-
-#menu_control:checked~.header nav {
-    right: 0%;
+    padding: 15px 10px;
 }
 
 
 
 
-.banner img{
-    width: 100%;
-    height: 100%;
-    margin-bottom: 100px;
+
+.banner .banner-sm{
+    display: none;
+}
+.banner .banner-lg{
+    display: none;
 }
 
 
@@ -129,7 +53,7 @@ nav a {
     margin: auto;
     height: 100%;
     text-align: center;
-    padding: 0 25px;
+    padding: 10% 25px;
 }
 .intro h1{
     font-size: 160%;
@@ -137,15 +61,29 @@ nav a {
     line-height: 1.5;
     margin: 0 0 30px;
 }
-.intro p{
-    font-size: 92%;
-    font-weight: normal;
-    color: #324255;
-    line-height: 1.8;
-    margin-bottom: 20%;
+
+.intro .intro-sm,
+.intro .intro-lg{
+    display: none;
 }
 
 
+
+
+.service .row{
+    padding: 0px 0px 50px;
+}
+
+
+.service .row::after{
+    content: " ";
+    width: 93%;
+    border: .3px solid rgb(235, 232, 232);
+    margin: auto;       /*無法用just.align.vertical居中*/
+}
+.service .row:last-child::after{
+    display: none;
+}
 
 .service .pic img{
     width: 100%;
@@ -192,15 +130,12 @@ nav a {
     text-decoration: none;
     display: block;
     padding-bottom: 60px;
-    border-bottom:1px solid rgb(199, 195, 195);
+    /* border-bottom:1px solid rgb(199, 195, 195); */
     font-size: 92%;    
 }
 /* .service .link a + .service .link a{
     border-bottom:1px solid rgb(199, 195, 195);
 } */
-
-
-
 
 
 
@@ -226,7 +161,7 @@ nav a {
     display: flex;
     justify-content: space-evenly;
 }
-.additional .function{
+.additional .col-6{
     width: 50%;
     height: 100%;
     margin-bottom: 60px;
@@ -261,19 +196,14 @@ nav a {
 
 .wrap{
     min-height: 625px;
-    /* display: flex; */
     background-color: #244680; 
-    position: relative;
 }
 .wrap .item{
     display: flex;
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    right: 5%;    
+    padding: 100px 20px 100px;
 }
 .wrap .txt h2{
-    font-size: 200%;
+    font-size: 250%;
     color: white;
     line-height: 1.5;
     margin-bottom: 50px;
@@ -286,7 +216,7 @@ nav a {
     background-color: #0061ff;
     color: white;
     border-radius: 30px;
-    width: 80%;
+    width: 100%;
     height: 50px;    
     line-height: 50px;
     text-align: center;    
@@ -304,170 +234,668 @@ nav a {
 
 
 
-.container.footer{
-    width: 375px;
-    height: 524px;
-    padding: 50px 20px 0px;
-    background-color: #00142D;
+
+
+
+
+/*手機專用*/
+@media screen and (max-width:767px){
+    
+    .banner .banner-sm{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .intro .intro-sm{
+        display: inline;
+        font-size: 100%;
+        font-weight: normal;
+        color: #324255;
+        line-height: 1.8;
+        margin-bottom: 20%;
+    }
+    
+
+
+    .full-screen{
+        position: fixed;
+        bottom: -2px;
+        left: 0;
+        width: 65vw;         /**/
+        height: 47vh;        /**/
+        z-index: 10;
+        background-image:url("https://img.shoplineapp.com/media/image_clips/606d791b511e9b001daedae0/original.png?1617787162");
+        background-size: cover;   /**/
+        display: flex;
+    }
+    .full-screen .txt{
+        width: 100%;
+        max-width: 380px;
+        max-height: 210px;
+        padding-left: 15px;
+        padding-top: 45px;
+        padding-bottom: 20px;
+        font-weight: bold;
+        position: relative;
+    }
+    .full-screen .txt h2{
+        line-height: 2;
+        font-size: 20px;
+        text-align: center;   /**/
+    }
+    .full-screen .txt p{
+        line-height: 1.5;
+        text-align: center;   /**/
+    }
+    .full-screen .banner{
+        position: relative;
+        width: 100%;
+        padding-left: 15px;
+        text-align: center;
+    }
+    .full-screen .banner a{
+        display: inline-block;
+        text-decoration: none;
+        background-color: rgba(231, 94, 52, 0.897);
+        color: white;
+        border-radius: 30px;
+        width: 180px;
+        height: 30px;    
+        line-height: 30px;
+        text-align: center;
+    }
+    .full-screen img{
+        width: 125px;
+        position: absolute;
+        left: 25%;      /**/
+        bottom: -14%;   /**/
+    }
+    .full-screen .btn-close{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color:white;
+        color: black;
+        text-decoration: none;
+        top: -10px;
+        right: -10px;
+        border-radius: 50%;
+    }
 }
-.footer .item{
-    width: 335px;
-    height: 17px;
-    line-height: 17px;
-    padding: 20px 0 19px;
-    border-top: .5px solid rgb(61, 58, 58);
-    color: white;
-}
-.footer .last-footer{
-    border-bottom: .5px solid rgb(61, 58, 58);
-}
-.row{
-    margin: auto;   /*為了不執行grid.css*/
-}
-
-.footer-nav{
-    display: none;
-}
-
-
-.container-bottom{
-    width: 335px;
-    height: 319px;
-    padding: 0px 20px;
-    /* margin-bottom: 95px; */
-    background-color: #00142D;
-}
-
-.row.net{
-    width: 306px;
-    height: 48px;
-    justify-content: space-evenly;
-    align-items: center;
-
-}
-.sitelink a{
-    display: block;
-    width: 208px;
-    height: 36px;
-    line-height: 36px;
-    text-align: center;
-    margin: auto;
-    padding: 7px 0;
-    text-decoration: none;
-    color: white;
-}
 
 
 
 
 
-.copyright{
-    color: rgb(155, 150, 150);
-    text-align: center;
-    padding: 8% 0 0;
-    line-height: 1.5;
-}
-
-
-
-
-
-
-
-@media screen and (min-width:768px) {
+/*手機和平板直向共用*/
+@media screen and (max-width:991px){
+    #menu_control {
+        position: absolute;
+        z-index: -2;
+        opacity: 0;
+    }
+    .menu-guide{
+        display: none;
+    }
+    
     .menu_btn {
+        width: 40px;
+        height: 40px;
+        background-color: #ffffff;
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
+    
+    
+    /*按下漢堡前三條線統一的狀態*/
+    .menu_btn span{
+        width: 60%;
+        height: 2px;
+        background-color: rgb(7, 6, 6);
+    
+        position: absolute;
+        display: block;   /*span是inline物件，所以要變block才看的到三條線*/
+        margin: auto;  /*左右居中*/
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    
+        transform: rotate(0deg);
+        /* transition: top 1s, 
+                    bottom 1s,
+                    opacity 1s;  
+                    transform 0.2s 1s;   */
+    
+    }
+    /*按下漢堡前三條線分別的狀態*/
+    .menu_btn span:first-child{
+        top: 14px;
+    }
+    .menu_btn span:nth-child(2){
+        opacity: 1;
+    }
+    .menu_btn span:last-child{
+        bottom: 14px;
+    }
+    /*按下漢堡後，第一條和第三條往第二條重疊，並旋轉*/
+    #menu_control:checked ~ .header .menu_btn span:first-child{
+        top: 0;
+        transform: rotate(45deg);
+        transition: top 0s, 
+                    transform 0s 0s;  
+        /*第一條的bottom因為這邊沒有寫出來，所以是不會有動畫的*/
+    }
+    #menu_control:checked ~ .header .menu_btn span:nth-child(2){
+        opacity: 0;  /*第二根消失*/
+        transition: opacity 0s;  
+    }
+    #menu_control:checked ~ .header .menu_btn span:last-child{
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition: bottom 0s, 
+                    transform 0s 0s;  
+        /*第三條的top因為這邊沒有寫出來，所以是不會有動畫的*/
+    }
+    
+    
+    .menu nav {
+        width: 100%;
+        height: calc(100vh - 50px);
+        /*vh視窗高*/
+        background-color: #ffffff;
+        position: absolute;
+        /*定位在header裡面*/
+        top: 50px;
+        right: -100%;
+        /*用transfer也可以讓他暫時消失*/
+        transition: .5s;
+        box-sizing: border-box;
+        padding: 20px 35px 30px;
+    }
+    
+    .menu .submenu{
+        display: block;
+        text-decoration: none;
+        color: black;
+        padding: 25px 15px;
+        border-bottom: 1px solid rgb(243, 238, 238);
+    }
+    
+    
+    .menu .submenu::after{
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 600; 
+        content: '\f107';
+        font-size: 14px;
+        transform: translateY(-50%);
+        color: #d2d7df;
+    }
+    
+    
+    .menu nav .free{
         display: none;
     }
 
+    #menu_control:checked~.header nav {
+        right: 0%;
+    }
+
+
+
+
+    .menu .menu-middle-top{
+        position: absolute;
+        bottom: 25%;
+        width: 80%;
+    
+        background-color: #0061ff;
+        border-radius: 200px;
+        border: 1px solid #0061ff;
+    }
+    .menu .menu-middle-top a{
+        display: block;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        height: 320%;
+        line-height: 320%;
+    }
+    .menu .menu-middle-bottom{
+        position: absolute;
+        bottom: 15%;
+        width: 80%;
+    
+        background-color: white;
+        border-radius: 200px;    
+        border: 1px solid #0061ff;
+    }
+    .menu .menu-middle-bottom a{
+        display: block;
+        color: #0061ff;
+        text-decoration: none;
+        text-align: center;
+        height: 320%;
+        line-height: 320%;
+    }
+    
+    .menu .menu-middle-top a:hover{
+        background-color: #2a569c;
+    }
+    .menu .menu-middle-bottom a:hover{
+        border: 1px solid #082e6b;
+    }
+    
+    
+    
+    .menu .menu-down{
+        display: flex;
+        position: absolute;
+        bottom: 0%;
+        right: 0%;
+        background-color: rgb(0,20,45);
+        width: 100%;
+        justify-content: space-around;
+    }
+    .menu .menu-down a{
+        display: block;
+        color: white;
+        height: 300%;
+        line-height: 300%;
+        text-decoration: none;
+    }
+    
+    .menu .menu-down a:hover{
+        color: #007bff;
+    }
+    
+    .menu .down-left{
+        position: relative;
+    }
+    
+    .menu .down-left::after{
+        content: " ";
+        position: absolute;
+        left: 200%;
+        top: 28%;
+        width: 0%;
+        height: 45%;
+        border: .1px solid rgb(235, 232, 232);
+    }
+
+
+
+    .container.footer{
+        width: 375px;
+        height: 524px;
+        padding: 50px 20px 0px;
+        background-color: #00142D;
+    }
+    .row.net{
+        width: 306px;
+        height: 48px;
+        justify-content: space-evenly;
+        align-items: center;
+    
+    }
+    .footer .item{
+        width: 335px;
+        height: 17px;
+        line-height: 17px;
+        padding: 20px 0 19px;
+        border-top: .5px solid rgb(61, 58, 58);
+    }
+    .footer .item-title{
+        text-decoration: none;
+        color: white;
+    }
+    .footer .item-title::after{
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 600; 
+        content: '\f107';
+        font-size: 14px;
+        /* transform: translateY(-50%); */
+        color: #d2d7df;
+        position: absolute; 
+        right: 10%;
+    }
+    
+    .footer .last-footer{
+        border-bottom: .5px solid rgb(61, 58, 58);
+    }
+    .row{
+        margin: auto;   /*為了不執行grid.css*/
+    }
+    .footer-nav{
+        display: none;
+    }
+    
+    
+    
+    
+    .container-bottom{
+        width: 335px;
+        height: auto;
+        padding: 0px 20px;
+        /* margin-bottom: 95px; */
+        background-color: #00142D;
+    }
+    
+    .row-icon{
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 10%;
+    }
+    .row-icon i{
+        font-size: 150%;
+        display:inline-block;
+        padding: 10px;
+    }
+    
+    
+    .sitelink a{
+        display: block;
+        width: 208px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        margin: auto;
+        padding: 7px 0;
+        text-decoration: none;
+        color: white;
+    }
+    
+    .copyright{
+        color: rgb(155, 150, 150);
+        text-align: center;
+        padding: 8% 0 15%;
+        line-height: 1.5;
+    }
+
+}
+
+
+
+/*平板直向.橫向.桌機共用*/
+@media  screen and (min-width:768px) {
+
     .header {
+        height:60px;
+    }
+
+    .menu .down-left::after{
+        content: " ";
+        position: absolute;
+        left: 350%;
+        top: 28%;
+        width: 0%;
+        height: 45%;
+        border: .1px solid rgb(235, 232, 232);
+    }
+
+    .banner .banner-sm{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .intro .intro-sm{
+        display: inline-block;
+        font-size: 100%;
+        font-weight: normal;
+        color: #324255;
+        line-height: 2.1;
+        padding: 0 10%;
+        text-align: center;
+    }
+    
+
+    
+    .container.footer{
+        width: 100%;
+        height: 524px;
+        padding: 5px 20px 0px;
+        background-color: #00142D;
+    }
+    .row{
+        margin:25px;    /*拿掉手機上不執行grid.css的margin*/
+    }
+
+    
+
+
+    .container-bottom{
+        width: auto;
+        height: auto;
+        padding: 0px 20px;
+        background-color: #00142D;
+    }
+
+    .row-icon{
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 10%;
+    }
+    .row-icon i{
+        font-size: 150%;
+        display:inline-block;
+        padding: 20px;
+    }
+    
+    .sitelink {
+        display: flex;
+    }    
+    .sitelink a{
+        display: block;
+        width: auto;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        padding: 7px 20px;
+        text-decoration: none;
+        color: white;
+    }
+    
+    .copyright{
+        color: rgb(155, 150, 150);
+        text-align: left;
+        padding: 8% 20px 15%;
+        line-height: 1.5;
+    }
+
+
+
+    .full-screen{
+        position: fixed;
+        bottom: -2px;
+        left: 0;
+        width: 380px;
+        height: 240px;
+        z-index: 10;
+        background-image:url("https://img.shoplineapp.com/media/image_clips/606d791b511e9b001daedae0/original.png?1617787162");
+        display: flex;
+    }
+    .full-screen .txt{
+        width: 100%;
+        max-width: 380px;
+        max-height: 210px;
+        padding-left: 15px;
+        padding-top: 45px;
+        padding-bottom: 20px;
+        font-weight: bold;
+        position: relative;
+    }
+    .full-screen .txt h2{
+        line-height: 2;
+        font-size: 20px;
+    }
+    .full-screen .txt p{
+        line-height: 1.5;
+    }
+    .full-screen .banner{
+        position: relative;
+        width: 100%;
+        padding-left: 15px;
+    }
+    .full-screen .banner a{
+        display: inline-block;
+        text-decoration: none;
+        background-color: rgba(231, 94, 52, 0.897);
+        color: white;
+        border-radius: 30px;
+        width: 180px;
+        height: 30px;    
+        line-height: 30px;
+        text-align: center;
+    }
+    .full-screen img{
+        width: 125px;
+        position: absolute;
+        left: 62%;
+        top: 26%;
+    }
+    .full-screen .btn-close{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color:white;
+        color: black;
+        text-decoration: none;
+        top: -10px;
+        right: -10px;
+        border-radius: 50%;
+    }
+
+
+}
+
+
+
+/*平板橫向.桌機共用*/
+@media screen and (min-width:992px) {
+    .menu_btn,
+    #menu_control {
+        display: none;
+    }
+
+    /* .header {
         display: flex;
         justify-content: space-between;
         background-color: #282923;
         align-items: center;
-    }
+    } */
 
-    nav {
-        position: relative;
-        /*因為手機是position: absolute;，桌機則改回相對定位*/
-        left: 0;
-        display: flex;
-        width: auto;
-        height: auto;
-        top: 0;
-        /*可回原始碼debug*/
-        background-color: transparent;
+    .header{
+        height: 120px;
     }
-
-    nav a {
-        border-bottom: none;
-    }
-
-    
     .menu-guide{
         background-color: #00142d;
-        font-size: 0;    
-        width: 100%;    
+        font-size: 0;      
         padding: 3px 0;
         width: 100%;
-        height: 100%;
+        height: 30%;
     }
     .menu-guide nav{
         position: relative;
-        width: auto;
-        height: auto;
+        height: 100%;
         left: 80%;
+        display: flex;
+        align-items: center;
+
     }
     .menu-guide a{
-        display: inline-block;    
-        padding: 10px 20px;
+        display: block;    
+        padding: 0px 20px;
         font-size: 14px;
         color:white;
         text-decoration: none;
-        background-color: #00142d;
+        background-color: #00142d;        
+        
     }
     .menu-guide a:hover{
         color:#007bff;
     }
-    
-    
-    .menu{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;    
-        height: 35px;
-        padding: 30px 0;
-        background-color:white;
-        font-size: 0;   
-    }
-    .menu nav{
-        display: flex;
-        position: relative;
-        width: auto;
-        height: auto;
+
+
+
+    .logo{
+        margin: 20px;
+        margin-left: 7%;
         align-items: center;
-        left: 8%;
     }
-    .menu .pic{
-        padding:0 40px;
+    .logo a{
+        display: block;
     }
-    .menu .submenu{
+    .logo img{
+        display: block;
+        width: 230%;
+        padding: 8px 10px;
+    }
+
+
+    .menu{
+        position: absolute;
+        left: 20%;
+        top: 15%;
+        width: 60vw;
+        height: 5%;
+        padding: 30px 0;
+        background-color:transparent;
+        font-size: 0;
+
+        /* display: flex; */
+        /* justify-content: space-between; */
+        /* width: 100%;     */
+        /* height: 35px; */
+    }
+
+    .menu nav ul {
+        /*因為手機是position: absolute;，桌機則改回相對定位*/
+        position: relative;
+        display: flex;
+        width: 150%;
+        height: 100%;
+        /*可回原始碼debug*/
+        background-color: transparent;
+        margin: 0px 5%;
+    }
+        
+    .menu nav ul li {
+        width: auto;
+        /* height: 100%; */
+        /* margin: 1%; */
+
+        padding:30px 0;
+        margin: 0 1%;
+    }
+
+
+    .menu nav .submenu{
         display: inline-block;    /*把<a>的padding撐高*/
-        font-size: 15px;
+        font-size: 14px;
         background-color: transparent;
         color:#324255;
         text-decoration: none;
-        padding: 0px 20px;   
+        padding: 0px;   
         border-bottom: none;
         position: relative;
+        width: 100%;
     }
     
-    .menu .submenu::before{
+    .menu .add-icon::before{
         font-family: "Font Awesome 5 Free"; 
         font-weight: 900; 
         content: '\f107';
         font-size: 14px;
         position: absolute;
-        left: 90%;
+        left: 105%;
         top: 50%;
         transform: translateY(-50%);
     }
@@ -475,64 +903,277 @@ nav a {
         color: #007bff;
     }
     
-    .menu .submenu:hover::before{
+    .menu .add-icon:hover::before{
         position: absolute;
-        left: 90%;
-        top: 0%;
+        left: 105%;
+        top: 5%;
         -moz-transform:scaleY(-1);
         -webkit-transform:scaleY(-1);
         -o-transform:scaleY(-1);
         transform:scaleY(-1);
     
     } 
+
+    .menu .menu-last{
+        display: inline-block;
+        position: absolute;
+        left: 45%;
+        bottom: -10%;
+        /* width: 300px; */
+        /* height: 50px; */
+        /* background-color: #0061ff; */
+    }
     
     .menu .free{
-        position: relative;   
-        width: auto;
-        height: auto;
-        text-align: center;
-        left: 25%;
-        background-color: #0061ff;
-        color: white;
-        border-radius: 30px;
-        font-size: 14px;
-        text-decoration: none;       
+        display: inline-block;
+        /* position:  absolute;   */
+        /* right: -50%; */
+        position: relative;
+        left: 250%;
+        top: -25%;
         width: 90px;
         height: 35px;
         line-height: 35px;
+        border-radius: 100px;
+        background-color: #0061ff;
+
+        color: white;
+        font-size: 14px;
+        text-decoration: none;       
+        text-align: center;
+        margin-right: 200%;
+
     }
-    
-    
+        
     .menu .free:hover{
         background-color:rgb(50, 78, 160) ;
         color: white;
     }
-    .menu .pic{
-        width: 160px;
+
+
+    .menu-middle-top{
+        display: none;
+    }
+    .menu-middle-bottom{
+        display: none;
+    }
+    .menu-down{
+        display: none;
+    }
+
+    .banner .banner-sm{
+        display: none;
+    }
+    .banner .banner-lg{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }    
+
+
+    .intro{
+        padding: 5% 25px 0%;
+    }
+
+    .intro h1{
+        font-size: 180%;
+    }
+
+    .intro .intro-lg{
+        display: inline-block;
+        font-size: 100%;
+        font-weight: normal;
+        color: #324255;
+        line-height: 1.8;
+        margin-bottom: 10%;
     }
 
 
-    .banner{
-        
-    }
-
-}
-
-
-
-@media screen and (min-width:768px) {
-    .service .row{
+    .container.service .row{
         align-items: center;   /*垂直對齊*/
+        margin-left: 5%;
+        margin-right: 5%;
     }
-    .service .row:nth-child(odd){
+    .container.service .row:nth-child(odd){
         flex-direction: row-reverse;
     }
 
-    .service .txt li{
+    .container.service .txt li{
         width: 50%;
         line-height: 2;    
     }
+
+
+
+    .additional .container{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .additional .col-md-4{
+        width: 30%;
+        height: 100%;
+        margin-bottom: 60px;
+    }
+    .additional .txt h3{
+        font-size: 130%;
+        height: 35px;
+        text-align: center;
+    }
+    .additional .txt p{
+        font-size: 100%;
+        height: 55px;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    
+    .wrap{
+        min-height: 425px;
+        background-color: #244680; 
+    }
+
+    .wrap .item{
+        padding: 100px 9% 100px;
+    }
+
+
+
+
+    .container.footer{
+        width: 100%;
+        margin: auto;
+        height: 100%;
+        padding: 50px 10% 0px;
+        background-color: #00142D;
+        box-sizing: border-box;
+
+    }
+    .footer .row{
+        /* width: auto; */
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 30px 0% 130px;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        margin: 0;
+    }
+    .footer .item{
+        /* width: 14%; */
+        height: 100%;
+        padding: 20px 0 19px;
+    }
+    .footer .item-title{
+        display: block;
+        text-decoration: none;
+        color: white;
+        font-size: 17px;
+        margin: 0 0 45px;
+        
+    }
+
+    
+    .footer-nav a{
+        text-decoration: none;
+        color: rgba(145, 141, 141, 0.692);
+        line-height: 2.3;
+    }
+
+
+
+
+
+
+
+    .container-bottom{
+        width: auto;
+        /* height: 30vh; */
+        /* padding: 0px 20px; */
+        /* margin-bottom: 95px; */
+        background-color: #00142D;
+    }
+    .row-bottom{
+        display: flex;
+        justify-content: space-between;
+        padding: 10vh 2vw;
+    }
+    .column-first{
+        order: -1;
+    }
+    
+
+    .row-icon{
+        display: flex;
+    }
+    .row-icon i{
+        font-size: 200%;
+        display:inline-block;
+        padding: 10px;   
+    }
+    .sitelink {
+        display: flex;
+    }
+    .sitelink a{
+        display: block;
+        width: 100%;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        margin: auto;
+        padding: 7px;
+        text-decoration: none;
+        color: white;
+        font-size: 85%;
+    }
+
+    .copyright{
+        color: rgb(155, 150, 150);
+        /* text-align: center; */
+        line-height: 1.6;
+        font-size: 85%;
+        padding: 8px 15px;
+        box-sizing: border-box;
+    }
+    
+
 }
+
+/*桌機專用*/
+@media screen and (min-width:1200px) {
+    .menu .free{
+        display: inline-block;
+        /* position:  absolute;   */
+        /* right: -50%; */
+        position: relative;
+        left: 310%;
+        top: -25%;
+        width: 90px;
+        height: 35px;
+        line-height: 35px;
+        border-radius: 100px;
+        background-color: #0061ff;
+
+        color: white;
+        font-size: 14px;
+        text-decoration: none;       
+        text-align: center;
+        margin-right: 200%;
+
+    }
+
+
+    .row-bottom{
+        display: flex;
+        justify-content: space-between;
+        padding: 10vh 8.5vw;
+    }
+}
+
+
+
+
+
 
 
 

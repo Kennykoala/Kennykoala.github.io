@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="shopline_RWD.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
     integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    
+
     <title>Document</title>
 
 </head>
@@ -23,6 +25,7 @@
     <!--使用label的設定 -->
 
     <div class="header">
+
         <div class="menu-guide">
             <nav>
                 <a href="/faq/overview" target="blank">幫助中心</a>
@@ -36,20 +39,23 @@
                     class="pic">
             </a>
         </h1>
+
         <label for="menu_control" class="menu_btn">
-            <span>選單</span>
+            <span></span>
+            <span></span>
+            <span></span>
         </label>
 
         <div class="menu">
             <nav>
                 <ul>
                     <li>
-                        <a href="#" target="_blank" class="submenu">開店服務
+                        <a href="#" target="_blank" class="submenu add-icon">開店服務
                             <span class="pseudo-arrow"></span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" target="_blank" class="submenu">方案費用
+                        <a href="#" target="_blank" class="submenu add-icon">方案費用
                             <span class="pseudo-arrow"></span>
                         </a>
                     </li>
@@ -69,34 +75,45 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" target="_blank" class="submenu">更多解決方案
-                            <span class="pseudo-arrow"></span>
+                        <a href="#" target="_blank" class="submenu add-icon">更多解決方案
+                            <!-- <span class="pseudo-arrow"></span> -->
                         </a>
                     </li>
                     <li>
-                        <a href="#" target="_blank" class="submenu">其他資源
+                        <a href="#" target="_blank" class="submenu add-icon">其他資源
                             <span class="pseudo-arrow"></span>
                         </a>
                     </li>
-                    <li>
-                        <a href="https://sso.shoplineapp.com/users/sign_up?locale=zh-hant&ref=shopline.tw" target="blank"
-                        class="free">免費試用</a>
+                    <li class="menu-last">
+                        <a href="https://sso.shoplineapp.com/users/sign_up?locale=zh-hant&ref=shopline.tw" target="blank" class="free">免費試用</a>
                     </li>
                 </ul>
+                <div class="menu-middle-top">
+                    <a href="https://sso.shoplineapp.com/users/sign_up?locale=zh-hant&ref=shopline.tw" target="blank">免費試用</a>            
+                </div>
+                <div class="menu-middle-bottom">
+                    <a href="https://admin.shoplineapp.com/users/sign_in?locale=zh-hant&amp;" target="blank" >登入網店</a>
+                </div>
+                <div class="menu-down">
+                    <a href="https://consultation.shopline.tw/?_gl=1*fhvurf*_ga*MTE2MzY5NzE5Ni4xNjI1MzY2Nzk3*_ga_HYY2MPLQQG*MTYyNTM3NzkzOS4zLjEuMTYyNTM3Nzk3MS4w*_ga_Z90SPBERZT*MTYyNTM3Nzk0MC4zLjEuMTYyNTM3Nzk3MS4w" target="_blank" class="down-left">開店諮詢</a>
+                    <a href="https://seminar.shopline.tw/?_gl=1*nzn9i2*_ga*MTE2MzY5NzE5Ni4xNjI1MzY2Nzk3*_ga_HYY2MPLQQG*MTYyNTM3NzkzOS4zLjEuMTYyNTM3Nzk2Ni4w*_ga_Z90SPBERZT*MTYyNTM3Nzk0MC4zLjEuMTYyNTM3Nzk2Ni4w" target="_blank">開店說明會</a>
+                </div>
             </nav>
+
         </div>
     </div>
 
 
     <div class="banner">
-        <img src="shopline_iphone.JPG" alt="">
-        <!-- <img src="shopline.JPG"> -->
+        <img src="shopline_iphone.JPG" alt="小banner" class="banner-sm">
+        <img src="shopline.JPG" alt="大banner" class="banner-lg">
     </div>
 
 
     <div class="intro">
         <h1>單一平台就能助你<br />在全通路輕鬆開店創業</h1>
-        <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+        <p class="intro-sm">從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+        <p class="intro-lg">從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，<br />並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
     </div>
 
 
@@ -296,7 +313,7 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-6 col-md-4 function">
+                    <div class="col-6 col-md-4 ">
                         <div class="pic">
                             <img
                                 src="https://img.shoplineapp.com/media/image_clips/5efef5c3b774cf002ab000ce/original.png?1593767363">
@@ -306,7 +323,7 @@
                             <p>從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
                         </div>
                     </div>
-                    <div class="col-6 col-md-4 service">
+                    <div class="col-6 col-md-4 ">
                         <div class="pic">
                             <img
                                 src="https://img.shoplineapp.com/media/image_clips/5efef5c4b774cf0027b00084/original.png?1593767364">
@@ -316,7 +333,7 @@
                             <p>圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
                         </div>
                     </div>
-                    <div class="col-6 col-md-4 service">
+                    <div class="col-6 col-md-4 ">
                         <div class="pic">
                             <img
                                 src="https://img.shoplineapp.com/media/image_clips/5f34a2e10225e00039a716b9/original.png?1597285089">
@@ -327,7 +344,7 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-md-4 service">
+                    <div class="col-6 col-md-4 ">
                         <div class="pic">
                             <img
                                 src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c4003c7aace6/original.png?1597285089">
@@ -337,7 +354,7 @@
                             <p>迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
                         </div>
                     </div>
-                    <div class="col-6 col-md-4 service">
+                    <div class="col-6 col-md-4 ">
                         <div class="pic">
                             <img
                                 src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c472e47aa8e9/original.png?1597285089">
@@ -347,7 +364,7 @@
                             <p>由官方認證的專業投手團隊，協助品牌投遞Facebook、Google、LINE 等廣告。</p>
                         </div>
                     </div>
-                    <div class="col-6 col-md-4 service">
+                    <div class="col-6 col-md-4 ">
                         <div class="pic">
                             <img
                                 src="https://img.shoplineapp.com/media/image_clips/5f34a2e16200760045e6138f/original.png?1597285089">
@@ -386,7 +403,7 @@
         <div class="row net">
             <div class="row-cols-1 row-cols-md-1 row-cols-lg-7 row-cols-xl-7">
                 <div class="item">
-                    <h3>SHOPLINE</h3>
+                    <a href="#" class="item-title">SHOPLINE</a>
                     <ul class="footer-nav">
                         <li><a href="https://shopline.tw/about">關於我們</a></li>
                         <li><a href="https://shopline.tw/about/team">認識團隊</a></li>
@@ -399,21 +416,20 @@
             </div>
             <div class="row-cols-1 row-cols-md-1 row-cols-lg-7 row-cols-xl-7">
                 <div class="item">
-                    <h3>我要開店</h3>
+                    <a href="#" class="item-title">我要開店</a>
                     <ul class="footer-nav">
                         <li><a href="https://shopline.tw/about/pricing">方案費用</a></li>
                         <li><a href="https://shopline.tw/about/pricing/module">功能模組</a></li>
                         <li><a href="https://shopline.tw/showcase">客戶案例</a></li>
                         <li><a href="https://seminar.shopline.tw/?_gl=1*12v17pf*_ga*MTI3MTMwMDU5Ny4xNjI0MjY4Njg3*_ga_HYY2MPLQQG*MTYyNDQ0ODAzMy4xMy4xLjE2MjQ0NDgzNzAuMA..*_ga_Z90SPBERZT*MTYyNDQ0ODAzMy4xMy4xLjE2MjQ0NDgzNzAuMA.."
                                 target="_blank">開店說明會</a></li>
-                        <li><a href="https://consultation.shopline.tw/?_gl=1*fjeang*_ga*MTI3MTMwMDU5Ny4xNjI0MjY4Njg3*_ga_HYY2MPLQQG*MTYyNDQ3MjczNS4xOC4xLjE2MjQ0NzM1MjkuMA..*_ga_Z90SPBERZT*MTYyNDQ3MjczNS4xOC4xLjE2MjQ0NzM1MjkuMA.."
-                                target="_blank"></a>開店諮詢</a></li>
+                        <li><a href="https://consultation.shopline.tw/?_gl=1*sf5gdr*_ga*MTE2MzY5NzE5Ni4xNjI1MzY2Nzk3*_ga_HYY2MPLQQG*MTYyNTM5Njc5NC41LjAuMTYyNTM5Njc5NS4w*_ga_Z90SPBERZT*MTYyNTM5Njc5NC41LjAuMTYyNTM5Njc5NS4w" target="_blank">開店諮詢</a></li>
                     </ul>
                 </div>
             </div>
             <div class="row-cols-1 row-cols-md-1 row-cols-lg-7 row-cols-xl-7">
                 <div class="item">
-                    <h3>功能特色</h3>
+                    <a href="#" class="item-title">功能特色</a>
                     <ul class="footer-nav">
                         <li><a href="https://shopline.tw/features/online-store">網路開店</a></li>
                         <li><a href="https://shopline.tw/social-commerce/features">社群購物</a></li>
@@ -426,7 +442,7 @@
             </div>
             <div class="row-cols-1 row-cols-md-1 row-cols-lg-7 row-cols-xl-7">
                 <div class="item">
-                    <h3>開店資源</h3>
+                    <a href="#" class="item-title">開店資源</a>
                     <ul class="footer-nav">
                         <li><a href="https://shopline.tw/online-store-setup">開店秘技</a></li>
                         <li><a href="https://shopline.tw/templates">版型主題</a></li>
@@ -438,7 +454,7 @@
             </div>
             <div class="row-cols-1 row-cols-md-1 row-cols-lg-7 row-cols-xl-7">
                 <div class="item">
-                    <h3>更多解決方案</h3>
+                    <a href="#" class="item-title">更多解決方案</a>
                     <ul class="footer-nav">
                         <li><a href="https://shopline.tw/enterprise">企業旗艦方案</a></li>
                         <li><a href="https://shopline.tw/cross-border">跨境電商方案</a></li>
@@ -449,7 +465,7 @@
             </div>
             <div class="row-cols-1 row-cols-md-1 row-cols-lg-7 row-cols-xl-7">
                 <div class="item">
-                    <h3>其他資源</h3>
+                    <a href="#" class="item-title">其他資源</a>
                     <ul class="footer-nav">
                         <li><a href="https://blog.shopline.tw/?_gl=1%2A1nsn0tn%2A_ga%2AMTI3MTMwMDU5Ny4xNjI0MjY4Njg3%2A_ga_Z90SPBERZT%2AMTYyNDQ0ODAzMy4xMy4xLjE2MjQ0NDg3OTIuMA.."
                                 target="_blank">電商教室</a></li>
@@ -461,8 +477,8 @@
                 </div>
             </div>
             <div class="row-cols-1 row-cols-md-1 row-cols-lg-7 row-cols-xl-7">
-                <div class="item last-footer">
-                    <h3>應用案例</h3>
+                <div class="item ">
+                    <a href="#" class="item-title">應用案例</a>
                     <ul class="footer-nav">
                         <li><a href="https://consultation.shopline.tw/pos" target="_blank">實體零售</a></li>
                         <li><a href="https://marketing.shopline.tw/o2o-plan" target="_blank">O2O 全通路</a></li>
@@ -482,66 +498,101 @@
 
         <div class="container-bottom">
             <div class="row-bottom">
-                <div class="row-cols-1 row-cols-md-1 row-cols-lg-3 row-cols-xl-3">
-                    <div class="row net">
+                <div class="column column-middle">
+                    <div class="row-icon">
                         <div class="row-cols-6 row-cols-md-6 row-cols-lg-6 row-cols-xl-6">
                             <div class="item-bottom">
                                 <a href="https://www.facebook.com/shopline.tw" target="_blank">
-                                    <i class="fab fa-facebook"></i>
+                                    <i class="fab fa-facebook fa-1g"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="row-cols-6 row-cols-md-6 row-cols-lg-6 row-cols-xl-6">
                             <div class="item-bottom">
                                 <a href="https://www.linkedin.com/company/shopline/" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
+                                    <i class="fab fa-linkedin-in fa-1g"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="row-cols-6 row-cols-md-6 row-cols-lg-6 row-cols-xl-6">
                             <div class="item-bottom">
                                 <a href="https://www.instagram.com/shopline_tw/" target="_blank">
-                                    <i class="fab fa-instagram"></i>
+                                    <i class="fab fa-instagram fa-1g"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="row-cols-6 row-cols-md-6 row-cols-lg-6 row-cols-xl-6">
                             <div class="item-bottom">
                                 <a href="https://www.youtube.com/c/shoplineglobalsmartcommerceenabler" target="_blank">
-                                    <i class="fab fa-youtube"></i>
+                                    <i class="fab fa-youtube fa-1g"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="row-cols-6 row-cols-md-6 row-cols-lg-6 row-cols-xl-6">
                             <div class="item-bottom">
                                 <a href="https://line.me/R/ti/p/%40prs5793t" target="_blank">
-                                    <i class="far fa-comment-dots"></i>
+                                    <i class="far fa-comment-dots fa-1g"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="row-cols-6 row-cols-md-6 row-cols-lg-6 row-cols-xl-6">
                             <div class="item-bottom">
                                 <a href="mailto: support@shoplineapp.com" target="_blank">
-                                    <i class="far fa-envelope"></i>
+                                    <i class="far fa-envelope fa-1g"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row-cols-1 row-cols-md-1 row-cols-lg-3 row-cols-xl-3">
+                <div class="column column-first">
                     <ul class="sitelink">
                         <li><a href="https://shopline.tw/about/sitemap">網站地圖</a></li>
                         <li><a href="https://shopline.tw/about/privacy">隱私權政策</a></li>
                         <li><a href="https://shopline.tw/about/terms">會員條款</a></li>
                     </ul>
                 </div>
-                <div class="copyright">
+                <div class="column copyright">
                     <p>服務時間 星期一至五 上午 10 點至晚上 7 點</p>
                     &copy; Copyright 2013-21 SHOPLINE Limited.
                 </div>
             </div>
         </div>
 
+
+
+
+
+
+        <div class="full-screen">
+            <div class="content">
+                <div class="txt">
+                    <h2>開店有疑問？</h2>
+                    <p>與 SHOPLINE 開店顧問進行<br />一對一免費電話諮詢 GO！</p>
+                </div>
+                <div class="banner">
+                    <a href="https://consultation.shopline.tw/?utm_medium=exit-recovery&amp;utm_campaign=homepage:tw:push-consultation:facepop:B&amp;utm_source=website-tw"
+                        target="_blank">馬上免費預約！</a>
+                </div>
+                <img src="https://img.shoplineapp.com/media/image_clips/60a3351b752b340035362798/original.png?1621308699">
+                <a href="#" class="btn-close">X</a>
+            </div>
+        </div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            // $("CSS選取器").事件(function(){})
+            $(document).ready(function () {
+                $(".btn-close").click(function () {
+                    $(".full-screen").hide();
+                })
+            })
+        </script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+crossorigin="anonymous"></script>
 
 
 
