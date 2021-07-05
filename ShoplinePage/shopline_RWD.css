@@ -200,7 +200,7 @@ body{
 }
 .wrap .item{
     display: flex;
-    padding: 100px 20px 100px;
+    padding: 100px 5vw 100px;
 }
 .wrap .txt h2{
     font-size: 250%;
@@ -228,6 +228,34 @@ body{
 
 
 
+.chatbot{
+    position: fixed;
+    bottom: 3vh;
+    right: 5vw;
+    width: 80px;
+    height: 80px;
+    background-color: #3493FB;
+    border-color: #3493FB;
+    border-radius: 50%;
+    /* box-shadow: 0px 0px 0px #dad8d8; */
+}
+.chatbot img{
+    position: absolute;
+    top: 24%;
+    left: 30%;
+    width: 50%;
+    vertical-align: middle;
+    /* display: none; */
+}
+.chatbot i{
+    display: none;
+    position: absolute;
+    top: 22%;
+    left: 26%;
+    width: 50%;
+    color: white;
+    font-size: 350%;
+}
 
 
 
@@ -531,20 +559,20 @@ body{
 
 
     .container.footer{
-        width: 375px;
+        width: auto;
         height: 524px;
         padding: 50px 20px 0px;
         background-color: #00142D;
     }
     .row.net{
-        width: 306px;
+        width: auto;
         height: 48px;
         justify-content: space-evenly;
         align-items: center;
     
     }
     .footer .item{
-        width: 335px;
+        width: 80vw;
         height: 17px;
         line-height: 17px;
         padding: 20px 0 19px;
@@ -595,6 +623,7 @@ body{
         font-size: 150%;
         display:inline-block;
         padding: 10px;
+        color:white;  
     }
     
     
@@ -616,6 +645,20 @@ body{
         padding: 8% 0 15%;
         line-height: 1.5;
     }
+
+
+    .chatbox{
+        display: none;
+        position: fixed;
+        bottom: 15vh;
+        right: 3vw;
+        width: 50vw;
+        height: 65vh;
+        background-color: white;
+        box-shadow: 5px 5px 19px #8F8B8B;
+        border-radius: 10px;
+    }
+
 
 }
 
@@ -655,6 +698,20 @@ body{
     }
     
 
+
+
+    .container.service .txt li{
+        width: 50%;
+        line-height: 2;    
+    }
+
+
+    .additional .col-md-4{
+        width: 30%;
+        height: 100%;
+        margin-bottom: 60px;
+    }
+
     
     .container.footer{
         width: 100%;
@@ -685,10 +742,12 @@ body{
         font-size: 150%;
         display:inline-block;
         padding: 20px;
+        color:white;  
     }
     
     .sitelink {
         display: flex;
+        position: relative;
     }    
     .sitelink a{
         display: block;
@@ -707,6 +766,24 @@ body{
         padding: 8% 20px 15%;
         line-height: 1.5;
     }
+
+    .sitelink .sitelink-line::before{
+        content: "";
+        height: 30%;
+        border: .1px solid white;
+        position: absolute;
+        left: 76px; 
+        top: 16px;       
+    }
+    .sitelink .sitelink-line::after{
+        content: "";
+        height: 30%;
+        border: .1px solid white;
+        position: absolute;
+        left: 158px; 
+        top: 16px;       
+    }
+
 
 
 
@@ -821,6 +898,15 @@ body{
     }
     .menu-guide a:hover{
         color:#007bff;
+    }
+
+    .menu-guide .guide-left::before{
+        content: "";
+        height: 50%;
+        border: .1px solid white;
+        position: absolute;
+        left: -10px; 
+        top: 9px;       
     }
 
 
@@ -998,10 +1084,10 @@ body{
         flex-direction: row-reverse;
     }
 
-    .container.service .txt li{
+    /* .container.service .txt li{
         width: 50%;
         line-height: 2;    
-    }
+    } */
 
 
 
@@ -1109,7 +1195,8 @@ body{
     .row-icon i{
         font-size: 200%;
         display:inline-block;
-        padding: 10px;   
+        padding: 10px;
+        color:white;   
     }
     .sitelink {
         display: flex;
@@ -1136,6 +1223,19 @@ body{
         box-sizing: border-box;
     }
     
+
+    .chatbox{
+        display: none;
+        position: fixed;
+        bottom: 15vh;
+        right: 3vw;
+        width: 30vw;
+        height: 65vh;
+        background-color: white;
+        box-shadow: 5px 5px 19px #8F8B8B;
+        border-radius: 10px;
+    }
+
 
 }
 
@@ -1167,6 +1267,19 @@ body{
         display: flex;
         justify-content: space-between;
         padding: 10vh 8.5vw;
+    }
+
+
+    .chatbox{
+        display: none;
+        position: fixed;
+        bottom: 15vh;
+        right: 3vw;
+        width: 20vw;
+        height: 65vh;
+        background-color: white;
+        box-shadow: 5px 5px 19px #8F8B8B;
+        border-radius: 10px;
     }
 }
 
