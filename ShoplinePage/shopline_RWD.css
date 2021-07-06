@@ -432,7 +432,7 @@ body{
     }
     
     
-    .menu nav {
+    .menu .menu-nav {
         width: 100%;
         height: calc(100vh - 50px);
         /*vh視窗高*/
@@ -464,7 +464,15 @@ body{
         transform: translateY(-50%);
         color: #d2d7df;
     }
+
+
+    .menu .drop-list{
+        display: none;
+    }
     
+
+
+
     
     .menu nav .free{
         display: none;
@@ -557,6 +565,134 @@ body{
     }
 
 
+
+
+
+
+    .slide{
+        width: 100%;
+        height: 620px;               /**/
+        padding: 4% 5%;
+        box-sizing: border-box;
+    }
+    .slide h3{
+        text-align: center;
+        font-size: 200%;
+        font-weight: bold;
+        padding-top: 7%;     /***/
+    }
+    .slide h3 span{
+        color: #0061ff;
+    }
+    .slide .brand{
+        width: 100%;
+        height: 150px;
+        /* border-bottom: 1px solid gray; */
+        display: flex;
+        position: relative;
+        top: 400px;               /***/
+    }
+    .slide .brand-box{
+        width: 20%;
+        height: 150px;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .slide .btn{
+        border: transparent;        
+        background-color: transparent;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;  /*讓滑鼠點到空白處也能切換幻燈片*/
+
+    }
+
+    .slide .brand img{
+        display: none;      /***/
+    }
+    .slide .brand i{
+        font-size: 90%;
+        color: gray;        
+    }
+    .slide .brand i:hover{
+        font-size: 90%;
+        color: #0061ff;        
+    }
+
+    /* .slide .brand-box:hover .slide .brand-box::before{
+        content: '\e924';
+        font-family: 'icomoon2' !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5rem;
+        z-index: 2;
+        color: rgba(180, 40, 94, 0.2);
+        background-color: #00142d;
+    } */
+
+
+
+    .brand-content{
+        width: 100%;
+        padding: 1.5% .5%;
+        box-sizing: border-box;
+        position: relative;
+        top: -100px;
+    }
+
+    .brand-content .brand-item{
+        /* position: ; */
+    }
+
+    .brand-content .item-pic{
+        padding-right: 5px;
+        text-align: center;
+    }
+    
+    .brand-content img{
+        width: 100%;             /**/
+    }
+
+    .brand-content .item-txt{
+        width: 90%;
+        padding-left: 5px;
+        position: relative;
+        text-align: left;      /***/
+    }
+
+    .brand-content .item-txt a{
+        display: block;
+        text-decoration: none;
+        color: #0061ff;
+        padding-top: 5%;
+
+    }
+    .brand-content .item-txt p{
+        font-size: 16px;
+        line-height: 2;
+        padding-top:5%;
+    }
+    .brand-content .item-txt span{
+        position: absolute;
+        left: 3px;
+        bottom: -50px;
+    }
+
+
+
+
+
+
+
+
+
+    
 
     .container.footer{
         width: auto;
@@ -660,6 +796,26 @@ body{
     }
 
 
+}
+
+/*平板直向專用*/
+@media screen and (min-width:768px) and (max-width:991px) {
+    
+    .slide{
+        width: 100%;
+        height: 800px;               /**/
+        padding: 4% 5%;
+        box-sizing: border-box;
+    }
+
+    .slide .brand{
+        width: 100%;
+        height: 150px;
+        /* border-bottom: 1px solid gray; */
+        display: flex;
+        position: relative;
+        top: 520px;               /***/
+    }
 }
 
 
@@ -942,7 +1098,7 @@ body{
         /* height: 35px; */
     }
 
-    .menu nav ul {
+    .menu .menu-nav .menu-ul {
         /*因為手機是position: absolute;，桌機則改回相對定位*/
         position: relative;
         display: flex;
@@ -953,13 +1109,14 @@ body{
         margin: 0px 5%;
     }
         
-    .menu nav ul li {
+    .menu .menu-nav .menu-ul .menu-li {
         width: auto;
         /* height: 100%; */
         /* margin: 1%; */
-
         padding:30px 0;
         margin: 0 1%;
+        position: relative;
+        box-sizing: border-box;
     }
 
 
@@ -971,8 +1128,9 @@ body{
         text-decoration: none;
         padding: 0px;   
         border-bottom: none;
-        position: relative;
+        /* position: relative; */
         width: 100%;
+        height: 100%;
     }
     
     .menu .add-icon::before{
@@ -992,13 +1150,133 @@ body{
     .menu .add-icon:hover::before{
         position: absolute;
         left: 105%;
-        top: 5%;
-        -moz-transform:scaleY(-1);
+        top: 40%;
+        /* -moz-transform:scaleY(-1);
         -webkit-transform:scaleY(-1);
-        -o-transform:scaleY(-1);
+        -o-transform:scaleY(-1); */
         transform:scaleY(-1);
-    
     } 
+
+
+
+    .menu .drop-list{
+        position: absolute;
+        /* z-index: 99; */
+        top: 72px;
+        left: -30px;
+        width: 1050%;
+        height: 540%;
+        background-color: white;
+        /* opacity: 0; */
+        /* overflow:scroll; */
+        box-shadow: 0px 2px 5px #e0dddd;
+        padding: 25px 20px;
+        box-sizing: border-box;
+        display: none;
+    }
+
+    .menu .drop-list.second{
+        position: absolute;
+        top: 72px;
+        left: -200px;
+        width: 1050%;
+        height: 340%;
+        background-color: white;
+        box-shadow: 0px 2px 5px #e0dddd;
+        padding: 25px 20px;
+        box-sizing: border-box;
+        display: none;
+    }
+
+    .menu .drop-list.third{
+        position: absolute;
+        top: 72px;
+        left: -300px;
+        width: 800%;
+        height: 600%;
+        background-color: white;
+        box-shadow: 0px 2px 5px #e0dddd;
+        padding: 25px 20px;
+        box-sizing: border-box;
+        display: none;
+    }
+
+    .menu .drop-list.fourth{
+        position: absolute;
+        top: 72px;
+        left: -680px;
+        width: 1680%;
+        height: 550%;
+        background-color: white;
+        box-shadow: 0px 2px 5px #e0dddd;
+        padding: 25px 20px;
+        box-sizing: border-box;
+        display: none;
+    }
+
+    .menu .menu-li:hover{
+        /* border-bottom: 5px solid red; */
+        /* z-index: 3; */
+    }
+    .menu .menu-li:hover .drop-list{
+        /* opacity: 1; */
+        /* overflow: visible; */
+        display: block;
+    }
+
+
+
+
+    .menu .drop-list h3{
+        color: black;
+        line-height: 2;
+        font-size: 20px;
+        position: relative;
+        z-index: 2;
+    }
+    .menu .drop-list p{
+        color: gray;
+        line-height: 1.5;
+        font-size: 16px;
+        position: relative;
+        z-index: 2;
+        padding-bottom: 15px;
+        border-bottom: 1px solid gray;
+    }
+    .menu .drop-list .insert{
+        text-decoration: none;
+        color: #8F8B8B;
+    }
+
+    .menu .drop-link{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+    }
+    .drop-link .inner{
+        width: 25.333333%;
+    }
+    .menu .drop-link .inner-title{
+        color: black;
+        font-size: 20px;
+        padding: 30px 0 10px;
+        border-bottom: 1px solid gray;
+    }
+    .menu .drop-link a{
+        display: block;
+        text-decoration: none;
+        color: gray;
+        /* line-height: 1; */
+        font-size: 16px;
+        padding: 13px 0;
+        
+    }
+
+
+
+
+
 
     .menu .menu-last{
         display: inline-block;
@@ -1012,11 +1290,12 @@ body{
     
     .menu .free{
         display: inline-block;
-        /* position:  absolute;   */
-        /* right: -50%; */
-        position: relative;
-        left: 250%;
-        top: -25%;
+        position:  absolute;  
+        /* position: relative; */
+        left: 250px;
+        top: -65px;
+        /* left: 250%;
+        top: -100%; */
         width: 90px;
         height: 35px;
         line-height: 35px;
@@ -1121,6 +1400,121 @@ body{
     .wrap .item{
         padding: 100px 9% 100px;
     }
+
+
+
+
+    .slide{
+        width: 100%;
+        height: 520px;               /**/
+        padding: 4% 5%;
+        box-sizing: border-box;
+    }
+    .slide h3{
+        text-align: center;
+        font-size: 230%;
+        font-weight: bold;
+    }
+    .slide h3 span{
+        color: #0061ff;
+    }
+    .slide .brand{
+        width: 100%;
+        height: 150px;
+        border-bottom: 1px solid gray;
+        display: flex;
+        position: relative;
+    }
+    .slide .brand-box{
+        width: 20%;
+        height: 150px;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .slide .btn{
+        border: transparent;        
+        background-color: transparent;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;  /*讓滑鼠點到空白處也能切換幻燈片*/
+
+    }
+
+    .slide .brand-box:hover{
+        border-bottom: 4px solid #0061ff;
+        /* background-image: ; */
+    }
+
+
+    .slide .brand i{
+        display: none;
+    }
+    .slide .brand-box:hover .slide .brand-box::before{
+        content: '\e924';
+        font-family: 'icomoon2' !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5rem;
+        z-index: 2;
+        color: rgba(180, 40, 94, 0.2);
+        background-color: #00142d;
+    }
+
+
+
+    .brand-content{
+        width: 100%;
+        padding: 1.5% .5%;
+        box-sizing: border-box;
+    }
+
+    .brand-content .brand-item{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .brand-content .item-pic{
+        padding-right: 5px;
+        text-align: center;    
+    }
+    
+    .brand-content img{
+        width: 90%;             /**/
+    }
+
+    .brand-content .item-txt{
+        width: 40%;
+        padding-left: 5px;
+        position: relative;
+    }
+
+    .brand-content .item-txt a{
+        display: block;
+        text-decoration: none;
+        color: #0061ff;
+        padding-top: 2%;
+
+    }
+    .brand-content .item-txt p{
+        font-size: 16px;
+        line-height: 2;
+        padding-top:5%;
+
+    }
+    .brand-content .item-txt span{
+        /* align-items: flex-end; */
+        position: absolute;
+        left: 3px;
+        bottom: 3px;
+    }
+
 
 
 
@@ -1243,11 +1637,10 @@ body{
 @media screen and (min-width:1200px) {
     .menu .free{
         display: inline-block;
-        /* position:  absolute;   */
         /* right: -50%; */
-        position: relative;
-        left: 310%;
-        top: -25%;
+        position: absolute;
+        left: 300px;
+        top: -65px;
         width: 90px;
         height: 35px;
         line-height: 35px;
@@ -1260,6 +1653,18 @@ body{
         text-align: center;
         margin-right: 200%;
 
+    }
+
+
+    .slide{
+        width: 100%;
+        height: 620px;               /**/
+        padding: 4% 5%;
+        box-sizing: border-box;
+    }
+    
+    .brand-content img{
+        width: 100%;             /**/
     }
 
 
