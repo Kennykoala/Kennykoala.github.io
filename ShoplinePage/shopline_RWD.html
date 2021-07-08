@@ -951,12 +951,13 @@
             //     })
             // })
 
-
+            // $(document).ready(function(){
+            //     $(window).resize(); 
+            // })
 
 
             let slideIndex = 1;
             showDivs(slideIndex);
-
 
             function currentDiv(n) {
                 showDivs(slideIndex = n);
@@ -975,10 +976,11 @@
                     x[i].style.display = "none";  
                 }
 
+
                 if( window.screen.width <= 991)
                 {x[slideIndex-1].style.display = "block"};
                 if( window.screen.width > 991) 
-                {x[slideIndex-1].style.display = "flex"};                
+                {x[slideIndex-1].style.display = "flex"};
 
             }
 
