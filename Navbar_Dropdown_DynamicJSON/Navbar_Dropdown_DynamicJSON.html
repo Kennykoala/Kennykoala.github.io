@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">品牌主機</a>
+            <div class="dropdown-content" id="pc">
+
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">電腦零件</a>
+            <div class="dropdown-content" id="parts">
+
+            </div>
+        </li>
+    </ul>
+
+
+
+    <script>
+        /*const pcArray = [
+            { pc: "華碩", url: "https://www.asus.com" },
+            { pc: "技嘉", url: "https://www.gigabyte.com" },
+            { pc: "微星", url: "https://tw.msi.com" },
+        ];
+
+        const partsArray = [
+            { parts: "CPU", url: "https://24h.pchome.com.tw/region/DRAI" },
+            { parts: "GPU", url: "https://24h.pchome.com.tw/region/DRAD" },
+            { parts: "SSD", url: "https://24h.pchome.com.tw/region/DRAH" },
+        ];
+        */
+
+
+        let url = "https://raw.githubusercontent.com/Kennykoala/FileStorage/main/Computer.json"
+        let pcArray, partsArray;
+
+
+        //改版成動態加入DOM節點
+        let pcMenu, partsMenu;
+        window.onload = function () {
+            fetch(url)
+                .then(response => response.json())  
+                .then(result => {
+
+                    pcArray = result.Pc;
+                    partsArray = result.Parts;
+
+                    //1.pcItems
+                    let div_pc = document.querySelector("#pc");
+                    pcArray.forEach(item =>{
+                        // console.log(item);
+                        pcMenu = document.createElement("a");
+                        pcMenu.innerText = item.pc;    
+                        pcMenu.setAttribute("href", item.url);
+                        div_pc.appendChild(pcMenu);
+                    })
+
+
+                    // pcItems = document.querySelectorAll("#pc a");
+                    // pcItems.forEach((anchor, index) => {
+                    //     anchor.innerText = pcArray[index].pc;                
+                    //     anchor.setAttribute("href", pcArray[index].url);
+                    // });
+
+
+                    
+                    //2.partsItems
+                    let div_parts = document.querySelector("#parts");
+                    partsArray.forEach(item =>{
+                        // console.log(item);
+                        partsMenu = document.createElement("a");
+                        partsMenu.innerText = item.parts;    
+                        partsMenu.setAttribute("href", item.url);
+                        div_parts.appendChild(partsMenu);
+                    })
+
+                    // partsItems = document.querySelectorAll("#parts a");
+                    // partsItems.forEach((anchor, index) => {
+                    //     anchor.innerText = partsArray[index].parts;
+                    //     anchor.setAttribute("href", partsArray[index].url);
+                    // });
+
+                    
+                })
+
+        }
+
+    </script>
+</body>
+
+</html>
