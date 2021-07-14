@@ -87,7 +87,7 @@
             //check ans function
             function guessAns() {
                 let guessArray = guessans.value.split("");
-                let re = /^[0-9]{4}$/; 
+                let re = /^[0-9]*$/; 
                 if( !re.test(guessans.value)){
                     alert("輸入非數字，請重新輸入");
                     guessans.value = "";
