@@ -66,21 +66,19 @@
                     pool.splice(index, 1);
                 };
                 alert("隨機亂數已生成");
-                postStart()
+                postStart();
             });
 
             //按"放棄重來"
             reset.addEventListener('click', function () {
-                alert(`答案: ${answerArray}`)
+                alert(`答案: ${answerArray}`);
                 process.innerText = " ";
-                postReset()
+                postReset();
             });
 
             //按"看答案"
             lookup.addEventListener('click', function () {
-                alert(`答案: ${answerArray}`)
-                // process.innerText=" ";
-                // postLookup()
+                alert(`答案: ${answerArray}`);
             });
 
             //按"猜"
@@ -106,7 +104,7 @@
                     let idx = answerArray.indexOf(val);
                     if (idx != -1) {
                         if (idx == id) {
-                            A++
+                            A++;
                         }
                         else {
                             B++;
@@ -135,7 +133,7 @@
                 if (ABbox.innerText == "4A0B") {
                     ABbox.style.background = "green";
                     alert("恭喜答對!");
-                    postGuessbtn()
+                    postGuessbtn();
 
                 }
                 else {
@@ -184,7 +182,6 @@
                 guessans.disabled = true;
                 guessbtn.disabled = true;
             }
-
         }
 
     </script>
