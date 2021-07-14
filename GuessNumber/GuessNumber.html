@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Guess Number</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>猜數字-1A2B</h1>
+
+    <div class="input-group mb-3 mt-3 justify-content-center">
+        <button class="btn btn-outline-secondary" type="button" style="width: 150px;" id="start">開始</button>
+        <button class="btn btn-outline-secondary" type="button" style="width: 150px;" id="reset">放棄重來</button>
+        <button class="btn btn-outline-secondary" type="button" style="width: 150px;" id="lookup">看答案</button>
+    </div>
+    <div class="" id="process">
+
+    </div>
+    <div class="input-group mb-3 mt-3 justify-content-center">
+        <span class="input-group-text">猜答案</span>
+        <input type="text" placeholder="請輸入4個不同數字" aria-label="Guess Number" style="width: 330px;" id="guessans">
+        <button class="btn btn-outline-secondary" type="button" id="guessbtn">猜!</button>
+    </div>
+
+
+    <script type="text/javascript">
+
+        let start, reset, lookup, guessans, guessbtn, process, dtRow, ABbox;
+        let answerArray = [];
+        window.onload = function () {
+            start = document.querySelector('#start');
+            reset = document.querySelector('#reset');
+            lookup = document.querySelector('#lookup');
+            guessans = document.querySelector('#guessans');
+            guessbtn = document.querySelector('#guessbtn');
+            process = document.querySelector('#process');
+
+            preStart();
+
+            //按"開始"，產生亂數
+            start.addEventListener('click', function lookupAns() {
+                answerArray = [];
+                process.innerText = " ";
+                let pool = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+                for (let i = 0; i < 4; i++) {
+                    let index = Math.floor(Math.random() * (pool.length));
+                    answerArray.push(pool[index]);
+                    pool.splice(index, 1);
+                };
+                alert("隨機亂數已生成");
+                postStart()
+            });
+
+            //按"放棄重來"
+            reset.addEventListener('click', function () {
+                alert(`答案: ${answerArray}`)
+                process.innerText = " ";
+                postReset()
+            });
+
+            //按"看答案"
+            lookup.addEventListener('click', function () {
+                alert(`答案: ${answerArray}`)
+                // process.innerText=" ";
+                // postLookup()
+            });
+
+            //按"猜"
+            guessbtn.addEventListener('click', guessAns);
+
+            //check ans function
+            function guessAns() {
+                let guessArray = guessans.value.split("");
+                if (guessArray.length != 4) {
+                    alert("輸入數字長度不符合要求，請重新輸入");
+                    guessans.value = "";
+                    return;
+                }
+                else if ((guessArray[0] == guessArray[1]) || (guessArray[0] == guessArray[2]) || (guessArray[0] == guessArray[3]) || (guessArray[1] == guessArray[2]) || (guessArray[1] == guessArray[3]) || (guessArray[2] == guessArray[3])) {
+                    alert("輸入重複數字，請重新輸入");
+                    guessans.value = "";
+                    return;
+                }
+
+                let A = 0;
+                let B = 0;
+                guessans.value.split("").forEach((val, id) => {
+                    let idx = answerArray.indexOf(val);
+                    if (idx != -1) {
+                        if (idx == id) {
+                            A++
+                        }
+                        else {
+                            B++;
+                        }
+                    }
+                })
+
+                dtRow = document.createElement('span');
+                ABbox = document.createElement('span');
+
+                dtRow.setAttribute('class', 'input-group-text');
+                dtRow.style.width = "450px";
+                dtRow.style.height = "38px";
+                dtRow.style.margin = "auto";
+                ABbox.style.color = "white";
+                ABbox.style.borderRadius = "5px";
+                ABbox.style.fontSize = "13px";
+                ABbox.style.fontWeight = "bold";
+                ABbox.style.width = "50px";
+                ABbox.style.order = "-1";
+                ABbox.style.marginRight = "10px";
+
+                dtRow.innerText = `${guessans.value}`;
+                ABbox.innerText = `${A}A${B}B`
+
+                if (ABbox.innerText == "4A0B") {
+                    ABbox.style.background = "green";
+                    alert("恭喜答對!");
+                    postGuessbtn()
+
+                }
+                else {
+                    ABbox.style.background = "red";
+                }
+
+                process.appendChild(dtRow);
+                dtRow.appendChild(ABbox);
+
+                guessans.value = "";
+            }
+
+            //互動式介面
+            function preStart() {
+                start.disabled = false;
+                reset.disabled = true;
+                lookup.disabled = true;
+                guessans.disabled = true;
+                guessbtn.disabled = true;
+            }
+            function postStart() {
+                start.disabled = true;
+                reset.disabled = false;
+                lookup.disabled = false;
+                guessans.disabled = false;
+                guessbtn.disabled = false;
+            }
+            function postReset() {
+                start.disabled = false;
+                reset.disabled = true;
+                lookup.disabled = true;
+                guessans.disabled = true;
+                guessbtn.disabled = true;
+            }
+            function postLookup() {
+                start.disabled = false;
+                reset.disabled = true;
+                lookup.disabled = true;
+                guessans.disabled = true;
+                guessbtn.disabled = true;
+            }
+            function postGuessbtn() {
+                start.disabled = false;
+                reset.disabled = true;
+                lookup.disabled = false;
+                guessans.disabled = true;
+                guessbtn.disabled = true;
+            }
+
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
