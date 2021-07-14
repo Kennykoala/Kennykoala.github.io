@@ -87,7 +87,13 @@
             //check ans function
             function guessAns() {
                 let guessArray = guessans.value.split("");
-                if (guessArray.length != 4) {
+                let re = /^[0-9]{4}$/; 
+                if( !re.test(guessans.value)){
+                    alert("輸入非數字，請重新輸入");
+                    guessans.value = "";
+                    return;
+                }
+                else if (guessArray.length != 4) {
                     alert("輸入數字長度不符合要求，請重新輸入");
                     guessans.value = "";
                     return;
