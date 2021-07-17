@@ -1,9 +1,7 @@
 
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 body{
-    /* 字型 */
     font-family: 'Noto Sans TC', sans-serif;
-    /* 顏色 */
     color: #2b2b2b;
 }
 .navbottom {
