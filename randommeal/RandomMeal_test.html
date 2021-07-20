@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="RandomMeal.css">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <h1>
+                這餐...我想來點...
+            </h1>
+            <!-- <h5>Get a random meal by clicking below</h5> -->
+            <button class="button-primary" id="get_meal">🦑 點我取好餐 🦞</button>
+        </div>
+        <div id="meal" class="row meal">
+
+        </div>
+    </div>
+
+
+
+    <script>
+        let get_meal_btn = document.getElementById('get_meal');
+        let meal_container = document.getElementById('meal');
+        // let br = document.createElement("br");
+        
+        window.onload = function () {
+
+            
+            get_meal_btn.addEventListener('click', () => {
+                
+                fetch('https://gw.openapi.org.tw/18463fd0-8aa7-11ea-8b2f-dfcba39a3448/6ace07502582?client_id=c4c5e920-e967-11eb-bcd3-2fe59eaf628f&client_secret=6YpO%2FI4KSda%2BaJh4XQcG85dlcVtMMAAPerglMF4u4y0%3D&skip=10&limit=25')
+                    .then(res => res.json())
+                    .then(res => {
+                        
+                        meal_container.innerText = " ";
+                        let dataArray = res['data'];
+                        // console.log(dataArray);
+                        let rdn = Math.floor(Math.random() * (dataArray.length));
+
+                        // dataArray.forEach((food, rdn) => {
+                        let food = dataArray[rdn];
+                        let foodName = food.name;
+                        meal_container.append("食物名稱:", foodName);
+                        meal_container.appendChild(document.createElement("br"))
+
+                        let weight = food.weight;
+                        meal_container.append("重量:", weight);
+                        meal_container.appendChild(document.createElement("br"))
+
+                        let unit = food.unit;
+                        meal_container.append("單位:", unit);
+                        meal_container.appendChild(document.createElement("br"))
+
+                        let calories = food.calories;
+                        meal_container.append("熱量:", `${calories}卡`);
+                        meal_container.appendChild(document.createElement("br"))
+
+                        let carbohydrate = food.carbohydrate;
+                        meal_container.append("碳水化合物:", `${carbohydrate}`);
+                        meal_container.appendChild(document.createElement("br"))
+
+                        let protein = food.protein;
+                        meal_container.append("蛋白質:", `${protein}`);
+                        meal_container.appendChild(document.createElement("br"))
+
+                        let dietaryFiber = food.dietaryFiber;
+                        meal_container.append("膳食纖維:", `${dietaryFiber}`);
+                        meal_container.appendChild(document.createElement("br"))
+
+                        let iconUrl = food.iconUrl;
+                        let img = document.createElement("img");
+                        let src = img.setAttribute("src", iconUrl);
+                        // img.src = iconUrl;
+                        meal_container.append(img);
+                        meal_container.appendChild(document.createElement("br"))
+
+                        // let keys = Object.keys(food);
+                        // keys.forEach(key =>{
+                        //     document.write(key + "=" + food[key]);
+                        // })                        
+                        // });
+
+                    })
+            });
+            // function getMeal() {
+            // }
+        }
+
+
+
+
+        // const createMeal = (meal) => {
+        //     const ingredients = [];
+        //     // Get all ingredients from the object. Up to 20
+        //     for (let i = 1; i <= 20; i++) {
+        //         if (meal[`strIngredient${i}`]) {
+        //             ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`)
+        //         } 
+        //         else {
+        //             // Stop if no more ingredients
+        //             break;
+        //         }
+        //     }
+
+        //     const newInnerHTML = `
+        //         <div class="row">
+        //             <div class="columns five">
+        //                 <img src="${meal.strMealThumb}" alt="Meal Image">
+        //                 ${meal.strCategory ? `<p><strong>Category:</strong> ${meal.strCategory}</p>` : ''}
+        //                 ${meal.strArea ? `<p><strong>Area:</strong> ${meal.strArea}</p>` : ''}
+        //                 ${meal.strTags ? `<p><strong>Tags:</strong> ${meal.strTags.split(',').join(', ')}</p>` : ''}
+        //                 <h5>Ingredients:</h5>
+        //                 <ul>
+        //                 ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+        //                 </ul>
+        //             </div>
+        //             <div class="columns seven">
+        //                 <h4>${meal.strMeal}</h4>
+        //                 <p>${meal.strInstructions}</p>
+        //             </div>
+        //         </div>
+        //             ${meal.strYoutube ? `
+        //             <div class="row">
+        //                 <h5>Video Recipe</h5>
+        //                 <div class="videoWrapper">
+        //                     <iframe width="420" height="315" src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}"></iframe>
+        //                 </div>
+        //             </div>` : ''}
+        //     `;
+
+        //     meal_container.innerHTML = newInnerHTML;
+        // }
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
