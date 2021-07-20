@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="iPadAir.css">
+
+    <title>Apple(台灣)</title>
+    <style>
+        @media screen and (max-width: 991px) {
+            .item-left {
+                padding-right: 5%;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .item-left {
+                padding-right: 40%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-enter">
+        <div class="container-fluid ">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.apple.com/tw/"><i class="fab fa-apple"
+                    style="font-size: 24px;"></i></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <!-- <a class="nav-link" aria-current="page" href="/ApplePurchasePage_Macbook.html">Mac</a> -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">iPad</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a class="nav-link" aria-current="page" href="/ApplePurchasePage_iPhone.html">iPhone</a> -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="navbottom">
+        <div class="item-left">iPad Air</div>
+        <!-- <div class="item-right">NT$18,900 起</div> -->
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="item" id="pic">
+                    <h1 class="title-sm">購買 iPad Air</h1>
+                    <img src="init.jpg" class="mainpic">
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="item" id="selectmode">
+                    <h1 class="title-lg">購買 iPad Air</h1>
+                    <div class="selectbox">
+                        <!-- <div id="selectmodel">
+                            <h3>選擇機型。</h3>
+                            <button id="modelBtn1" class="modelBtn">
+                                <div class="modelTxt">
+                                    <div class="modelL">
+                                        <span class="modelTxtL" id="modelTxtL1"> </span>
+                                        <span class="des" id="des1"> </span>
+                                    </div>
+                                    <div class="modelR">
+                                        <span class="modelTxtR" id="modelTxtR1"> </span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button type="button" id="modelBtn2" class="modelBtn">
+                                <div class="modelTxt">
+                                    <div class="modelL">
+                                        <span class="modelTxtL" id="modelTxtL2"> </span>
+                                        <span class="des" id="des2"> </span>
+                                    </div>
+                                    <div class="modelR">
+                                        <span class="modelTxtR" id="modelTxtR2"> </span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div> -->
+                        <div id="selectcolor">
+                            <h3>外觀</h3>
+                            <div class="colorCol">
+                                <button id="colorBtn1" class="colorBtn">
+                                    <div class="colorTxt">
+                                        <span class="corTxt">太空灰色</span>
+                                        <img src="gray_icon.png" alt="" class="colorIcon">
+                                    </div>
+                                </button>
+                                <button id="colorBtn2" class="colorBtn">
+                                    <div class="colorTxt">
+                                        <span class="corTxt">銀色</span>
+                                        <img src="silver_icon.png" alt="" class="colorIcon">
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="colorCol">
+                                <button id="colorBtn3" class="colorBtn">
+                                    <div class="colorTxt">
+                                        <span class="corTxt">玫瑰金色</span>
+                                        <img src="rose_icon.png" alt="" class="colorIcon">
+                                    </div>
+                                </button>
+                                <button id="colorBtn4" class="colorBtn">
+                                    <div class="colorTxt">
+                                        <span class="corTxt">綠色</span>
+                                        <img src="gray_icon.png" alt="" class="colorIcon">
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="colorCol">
+                                <button id="colorBtn5" class="colorBtn">
+                                    <div class="colorTxt">
+                                        <span class="corTxt">天藍色</span>
+                                        <img src="blue_icon.png" alt="" class="colorIcon">
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="selectmemory">
+                            <h3>儲存裝置</h3>
+                            <div class="memoryCol">
+                                <button id="memoryBtn1" class="memoryBtn">
+                                    <div class="memoryTxt">
+                                        <span class="memTxt">64GB<br />
+                                            <span class="desM" id="desM1">NT$18,900 起</span></span>
+                                    </div>
+                                </button>
+                                <button id="memoryBtn2" class="memoryBtn">
+                                    <div class="memoryTxt">
+                                        <span class="memTxt">256GB<br />
+                                            <span class="desM" id="desM2">NT$23,900 起</span></span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="selectWifi">
+                            <h3>連線能力</h3>
+                            <div class="wifiCol">
+                                <button id="wifiBtn1" class="wifiBtn">
+                                    <div class="wifiTxt">
+                                        <span class="connectTxt">Wi-Fi<br />
+                                            <span class="desWifi" id="desWifi1">NT$18,900 起</span></span>
+                                    </div>
+                                </button>
+                                <button id="wifiBtn2" class="wifiBtn">
+                                    <div class="wifiTxt">
+                                        <span class="connectTxt">Wi-Fi + 行動網路<br />
+                                            <span class="desWifi" id="desWifi2">NT$23,200 起</span></span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="checkout">
+                            <div class="momeyTxt">
+                                合計
+                            </div>
+                            <div class="money">
+
+                            </div>
+                            <div class="addcart">
+                                <button class="btn btn-primary" type="submit">加入購物袋</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        // const colorObj = [
+        //     { color: "太空灰色", corurl: "gray_icon.png", url: "gray.png" },
+        //     { color: "銀色", corurl: "silver_icon.png", url: "silver.png" },
+        //     { color: "玫瑰金色", corurl: "rose_icon.png", url: "rose.png" },
+        //     { color: "綠色", corurl: "green_icon.png", url: "green.png" },
+        //     { color: "天藍色", corurl: "blue_icon.png", url: "blue.png" },
+        // ]
+
+
+        // const wifiObj = [
+        //     { network: "Wi-Fi", price64GB: "NT$18,900", price256GB: "NT$23,900" },
+        //     { network: "Wi-Fi + 行動網路", price64GB: "NT$23,200", price256GB: "NT$28,200" }
+        // ]
+
+        const url = "https://raw.githubusercontent.com/Kennykoala/FileStorage/main/iPadair.json"
+
+        let ipadObj;
+
+        function requestIpadJson() {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                ipadObj = JSON.parse(this.responseText);
+            };
+            xhr.open("GET", url);
+            xhr.send();
+        }
+
+        // let colorBtn, colorBtn1, colorBtn2, memoryBtn1, memoryBtn2, memoryBtn3, memoryBtn4, memoryBtn5, itemL, itemR, modelTxtL1, modelTxtL2, des1, des2, modelTxtR1, modelTxtR2, mainpic, desM1, desM2, desM3, desM4, desM5, money;
+
+
+        window.onload = function () {
+            requestIpadJson();
+
+            colorBtn1 = document.querySelector("#colorBtn1");
+            colorBtn2 = document.querySelector("#colorBtn2");
+            colorBtn3 = document.querySelector("#colorBtn3");
+            colorBtn4 = document.querySelector("#colorBtn4");
+            colorBtn5 = document.querySelector("#colorBtn5");
+            memoryBtn1 = document.querySelector("#memoryBtn1");
+            memoryBtn2 = document.querySelector("#memoryBtn2");
+            wifiBtn1 = document.querySelector("#wifiBtn1");
+            wifiBtn2 = document.querySelector("#wifiBtn2");
+
+            desM1 = document.querySelector("#desM1");
+            desM2 = document.querySelector("#desM2");
+            desWifi1 = document.querySelector("#desWifi1");
+            desWifi2 = document.querySelector("#desWifi2");
+
+            mainpic = document.querySelector(".mainpic");
+            money = document.querySelector(".money");
+
+            let desWifi = [desWifi1, desWifi2];
+            let desM = [desM1, desM2];
+            let colorBtnArray = [colorBtn1, colorBtn2, colorBtn3, colorBtn4, colorBtn5];
+            let memoryBtnArray = [memoryBtn1, memoryBtn2];
+            let wifiBtnArray = [wifiBtn1, wifiBtn2];
+
+            preColor();
+            let wifiClkBool = false;
+
+            colorBtnArray.forEach((item, index) => {
+                item.addEventListener('click', colorChg)
+                function colorChg() {
+                    if ((wifiClkBool == true)) {
+                        postMemory()
+                    }
+                    else {
+                        postColor()
+                    };
+                    mainpic.src = ipadObj.colorObj[index].url;
+                    $(".colorBtn:not(item)").css("borderColor", "rgb(201, 197, 197)");
+                    $(this).css("borderColor", "blue");
+                }
+            })
+
+
+            memoryBtnArray.forEach((item, index) => {
+                item.addEventListener('click', memoryChg)
+                function memoryChg() {
+                    // itemR.innerText = ipadObj.wifiObj[index].url;
+                    $(".memoryBtn:not(item)").css("borderColor", "rgb(201, 197, 197)");
+                    $(this).css("borderColor", "blue");
+                    switch (index) {
+                        case 0:
+                            memChk = "64GB";
+                            break;
+                        case 1:
+                            memChk = "256GB";
+                            break;
+                        default:
+                            break;
+                    }
+                    postMemory()
+                }
+            })
+
+            wifiBtnArray.forEach((item, index) => {
+                item.addEventListener('click', wifiChg)
+                function wifiChg() {
+                    switch (memChk) {
+                        case "64GB":
+                            if (index == 0) {
+                                desWifi[0].innerText = ipadObj.wifiObj[index].price64GB;
+                            }
+                            else if(index == 1){
+                                desWifi[1].innerText = ipadObj.wifiObj[index].price64GB;
+                            }
+                            break;
+                        case "256GB":
+                            if (index == 0) {
+                                desWifi[0].innerText = ipadObj.wifiObj[index].price256GB;
+                            }
+                            else {
+                                desWifi[1].innerText = ipadObj.wifiObj[index].price256GB;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    // itemR.innerText = desWifi[index].innerText;
+                    
+                    $(".wifiBtn:not(item)").css("borderColor", "rgb(201, 197, 197)");
+                    $(this).css("borderColor", "blue");
+                    money.innerText = desWifi[index].innerText;
+                    wifiClkBool = true;
+                }
+            })
+
+
+            function preColor() {
+                colorBtn1.disabled = false;
+                colorBtn2.disabled = false;
+                colorBtn3.disabled = false;
+                colorBtn4.disabled = false;
+                colorBtn5.disabled = false;
+                memoryBtn1.disabled = true;
+                memoryBtn2.disabled = true;
+                wifiBtn1.disabled = true;
+                wifiBtn2.disabled = true;
+            }
+            function postColor() {
+                colorBtn1.disabled = false;
+                colorBtn2.disabled = false;
+                colorBtn3.disabled = false;
+                colorBtn4.disabled = false;
+                colorBtn5.disabled = false;
+                memoryBtn1.disabled = false;
+                memoryBtn2.disabled = false;
+                wifiBtn1.disabled = true;
+                wifiBtn2.disabled = true;
+            }
+            function postMemory() {
+                colorBtn1.disabled = false;
+                colorBtn2.disabled = false;
+                colorBtn3.disabled = false;
+                colorBtn4.disabled = false;
+                colorBtn5.disabled = false;
+                memoryBtn1.disabled = false;
+                memoryBtn2.disabled = false;
+                wifiBtn1.disabled = false;
+                wifiBtn2.disabled = false;
+            }
+
+        }
+
+
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
