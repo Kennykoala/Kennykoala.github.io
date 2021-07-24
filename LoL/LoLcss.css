@@ -1,0 +1,92 @@
+.container-fluid h1{
+    text-align: center;
+}
+
+.row{
+    justify-content: space-between;
+}
+/* .row:after {
+    content: "";
+    width: 21rem;
+    /* flex: auto; 
+} */
+.row .card:last-child{
+    margin-left: 34px;
+    margin-right: auto;
+}
+.card{
+    border: 1px solid black;
+    margin: 15px;
+    /* overflow: hidden; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-content: flex-start; */
+    /* align-self: flex-start; */
+}
+/* .card:last-child:nth-child(5n - 1) {
+    margin-right: calc(24% + 4% / 3);
+}
+.card:last-child:nth-child(5n - 2) {
+    margin-right: calc(48% + 8% / 3);
+} */
+/* .card:not(:nth-child(4n)) {
+    margin-right: 15px;
+} */
+.card p{
+    height: 50px;
+    overflow : hidden;
+    text-overflow : ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+/* .headshot{
+    overflow: hidden;
+} */
+
+.card-title{
+    color: white;
+    background-color: black;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px;
+}
+
+.card-body {
+    background-color: #ffbf67;
+}
+
+.card:hover {
+    box-shadow: 8px 8px 15px #808080;
+    transform: translate(5px, 5px);
+}
+
+.card:hover img {
+    transform: scale(1.2);
+    transition: transform 0.5s;
+}
+
+.card:not(:hover) img {
+    transform: scale(1, 1);
+    transition: transform 0.3s;
+}
+
+.card:hover .card-body {
+    background-color: lightgreen !important;
+}
+
+.card:hover .card-title {
+    color: black;
+    background-color: white !important;
+}
+
+#lolImage{
+    width: 100%;
+}
+
+#description{
+    font-size: 18px;
+    line-height: 2;
+    font-weight: 400;
+}
