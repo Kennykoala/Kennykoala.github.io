@@ -10,28 +10,15 @@
     width: 21rem;
     /* flex: auto; 
 } */
-.row .card:last-child{
+/* .row .card:last-child{
     margin-left: 34px;
     margin-right: auto;
-}
+} */
 .card{
     border: 1px solid black;
     margin: 15px;
-    /* overflow: hidden; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-content: flex-start; */
-    /* align-self: flex-start; */
 }
-/* .card:last-child:nth-child(5n - 1) {
-    margin-right: calc(24% + 4% / 3);
-}
-.card:last-child:nth-child(5n - 2) {
-    margin-right: calc(48% + 8% / 3);
-} */
-/* .card:not(:nth-child(4n)) {
-    margin-right: 15px;
-} */
+
 .card p{
     height: 50px;
     overflow : hidden;
