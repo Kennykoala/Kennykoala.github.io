@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Calendar</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+		integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+
+	<!-- <script src="jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.flip.min.js"></script> -->
+
+	<!-- fontawesome -->
+	<script src="https://kit.fontawesome.com/60b6dc290f.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="calendar.css">
+
+</head>
+
+
+<body>
+	<div class="calendar-container">
+		<div class="container-fluid">
+			<!-- 前後月份按鈕 -->
+			<div class="row month-div">
+				<button class="col prev-month">
+					<i class="fas fa-chevron-left"></i>
+				</button>
+				<div class="col month-title">
+					<!-- 顯示年月 -->
+				</div>
+				<button class="col next-month">
+					<i class="fas fa-chevron-right"></i>
+				</button>
+				<button class="add-note-btn" data-toggle="modal" data-target="#addNoteModal">
+					<i class="fas fa-plus">&nbsp;新增行程</i>
+				</button>
+			</div>
+			<!-- 顯示一～日 -->
+			<div class="row day-string">
+				<div class="col">日</div>
+				<div class="col">一</div>
+				<div class="col">二</div>
+				<div class="col">三</div>
+				<div class="col">四</div>
+				<div class="col">五</div>
+				<div class="col">六</div>
+			</div>
+			<!-- 顯示該月份日期 -->
+			<div class="date-div">
+				<div class="row">
+					<div box-id="1" class="col"></div>
+					<div box-id="2" class="col"></div>
+					<div box-id="3" class="col"></div>
+					<div box-id="4" class="col"></div>
+					<div box-id="5" class="col"></div>
+					<div box-id="6" class="col"></div>
+					<div box-id="7" class="col"></div>
+				</div>
+				<div class="row">
+					<div box-id="8" class="col"></div>
+					<div box-id="9" class="col"></div>
+					<div box-id="10" class="col"></div>
+					<div box-id="11" class="col"></div>
+					<div box-id="12" class="col"></div>
+					<div box-id="13" class="col"></div>
+					<div box-id="14" class="col"></div>
+				</div>
+				<div class="row">
+					<div box-id="15" class="col"></div>
+					<div box-id="16" class="col"></div>
+					<div box-id="17" class="col"></div>
+					<div box-id="18" class="col"></div>
+					<div box-id="19" class="col"></div>
+					<div box-id="20" class="col"></div>
+					<div box-id="21" class="col"></div>
+				</div>
+				<div class="row">
+					<div box-id="22" class="col"></div>
+					<div box-id="23" class="col"></div>
+					<div box-id="24" class="col"></div>
+					<div box-id="25" class="col"></div>
+					<div box-id="26" class="col"></div>
+					<div box-id="27" class="col"></div>
+					<div box-id="28" class="col"></div>
+				</div>
+				<div class="row">
+					<div box-id="29" class="col"></div>
+					<div box-id="30" class="col"></div>
+					<div box-id="31" class="col"></div>
+					<div box-id="32" class="col"></div>
+					<div box-id="33" class="col"></div>
+					<div box-id="34" class="col"></div>
+					<div box-id="35" class="col"></div>
+				</div>
+				<div class="row extra-one">
+					<div box-id="36" class="col"></div>
+					<div box-id="37" class="col"></div>
+					<div box-id="38" class="col"></div>
+					<div box-id="39" class="col"></div>
+					<div box-id="40" class="col"></div>
+					<div box-id="41" class="col"></div>
+					<div box-id="42" class="col"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 新增行程Modal -->
+	<div class="modal fade" id="addNoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<!-- <div> -->
+				<div class="modal-header">
+					<div></div>
+					<h5 class="modal-title" id="exampleModalLabel">&emsp;&emsp;新增行程</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true" style="font-size: 1.5rem">&times;</span>
+					</button>
+				</div>
+
+				<form>
+					<div class="modal-body">
+						<label for="date">請選擇日期</label>
+						<input id="date" type="date" required />
+						<div class="sep-div"></div>
+						<div class="d-flex justify-content-between">
+							<div>
+								<label for="start-time">開始時間&nbsp;</label>
+								<input id="start-time" type="time" step="600" required />
+							</div>
+							<div>
+								<label for="end-time">結束時間&nbsp;</label>
+								<input id="end-time" type="time" step="600" required />
+							</div>
+						</div>
+
+						<div class="sep-div"></div>
+						<label for="todo">代辦事項</label>
+						<textarea id="todo" required></textarea>
+
+						<div class="sep-div"></div>
+						<label for="location">地點</label>
+						<input id="location" required />
+
+						<div class="sep-div"></div>
+						<label for="color">顏色標記</label>
+						<input id="color" type="color" value="#3498DB" required />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary add-note-submit">新增</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- 修改行程Modal -->
+	<button class="update-note-btn" data-toggle="modal" data-target="#updateNoteModal" style="display:hidden;"></button>
+	<div class="modal fade" id="updateNoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<!-- <div> -->
+				<div class="modal-header">
+					<div></div>
+					<h5 class="modal-title" id="exampleModalLabel">&emsp;&emsp;修改行程</h5>
+					<button type="button" class="close-2" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true" style="font-size: 1.5rem">&times;</span>
+					</button>
+				</div>
+
+				<form>
+					<div class="modal-body">
+						<input id="hidden-id" hidden />
+						<input id="hidden-item" hidden />
+						<label for="date-2">請選擇日期</label>
+						<input id="date-2" type="date" required />
+						<div class="sep-div"></div>
+						<div class="d-flex justify-content-between">
+							<div>
+								<label for="start-time-2">開始時間&nbsp;</label>
+								<input id="start-time-2" type="time" step="600" required />
+							</div>
+							<div>
+								<label for="end-time-2">結束時間&nbsp;</label>
+								<input id="end-time-2" type="time" step="600" required />
+							</div>
+						</div>
+
+						<div class="sep-div"></div>
+						<label for="todo-2">代辦事項</label>
+						<textarea id="todo-2" required></textarea>
+
+						<div class="sep-div"></div>
+						<label for="location-2">地點</label>
+						<input id="location-2" required />
+
+						<div class="sep-div"></div>
+						<label for="color-2">顏色標記</label>
+						<input id="color-2" type="color" value="#3498DB" required />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary delete-note-submit">刪除</button>
+						<button type="button" class="btn btn-primary update-note-submit">更新</button>
+					</div>
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+
+	<script>
+		let daysDiv, prevMonth, nextMonth, addNoteBtn, addNoteSubmit, deleteNoteSubmit, updateNoteSubmit, i;
+	</script>
+
+	<script type="module">
+		import { $g, $ce } from "./helpers.js";
+		daysDiv = $g('[box-id]');
+		prevMonth = $g('.fas.fa-chevron-left');
+		nextMonth = $g('.fas.fa-chevron-right');
+		addNoteBtn = $g('.add-note-btn');
+		addNoteSubmit = $g('.add-note-submit');
+		deleteNoteSubmit = $g('.delete-note-submit');
+		updateNoteSubmit = $g('.update-note-submit');
+
+		// 存新增的行程
+		let notesList = [];
+		let idsList = [];
+		// 初始化localStorage
+		let ls = window.localStorage;
+		if (ls.getItem('notesList') === null) {
+			ls.setItem('notesList', []);
+		}
+		if (ls.getItem('idsList') === null) {
+			ls.setItem('idsList', []);
+		}
+		
+		// date.getMonth()數字月份轉成以下字串
+		const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+		// 取得今天日期
+		let date = new Date();
+
+		/* onload 的時候做 */
+		window.onload = function () {
+			/* last month button */
+			prevMonth.addEventListener('click', jumpToPrevMonth);
+			/* next month button */
+			nextMonth.addEventListener('click', jumpToNextMonth);
+			/* 按下新增行程按鈕 */
+			addNoteBtn.addEventListener('click', initForm);
+
+			/* 新增行程事件 */
+			addNoteSubmit.addEventListener('click', addNote);
+			/* 刪除行程事件 */
+			deleteNoteSubmit.addEventListener('click', deleteNote);
+			/* 更新行程事件 */
+			updateNoteSubmit.addEventListener('click', updateNote);
+
+			/* 檢查 localStorage 有沒有東西 */
+			if (ls.getItem('notesList').length !== 0) {
+				//localStorage有東西
+				notesList = JSON.parse(ls.getItem('notesList'));
+				idsList = JSON.parse(ls.getItem('idsList'));
+				//顯示行程記錄
+				renderNotes();
+			} else {
+				//localStorage沒東西
+				//顯示行事曆"本月"時間
+				renderCalendar();
+			}
+		};
+
+		/* 顯示行事曆"本月"時間 */
+		function renderCalendar() {
+			let monthString = monthNames[date.getMonth()];    //date.getMonth():取得本月份，output: 7
+			$g('.month-title').innerHTML = `${monthString}<br/><span>${date.getFullYear()}</span>`;  // 顯示本月份
+
+			let firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay();  // 本月第一天是星期幾
+			let daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();  // 計算本月有幾天
+
+			/* 先清除已排序的日期 */
+			daysDiv.forEach((item) => {
+				item.innerHTML = "";
+			})
+
+			/* 重新 render 日期 */
+			for (i = 0; i < daysInMonth; i++) {
+				daysDiv[i + firstDay].innerHTML += `${i + 1}`;
+			}
+			if (daysInMonth + firstDay >= 36) {
+				//box-id使用超過5列
+				$g('.extra-one').style.display = null;
+			} else {
+				$g('.extra-one').style.display = "none";
+			}
+		}
+
+		/* 顯示行程紀錄 */
+		function renderNotes() {
+			renderCalendar();  // 先重新 render 行事曆日期，以便把內容清除
+			let year = date.getFullYear();
+			let month = date.getMonth() + 1;
+			notesList.forEach((item) => {
+				if (item.year === year && item.month === month) {
+					let firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay();  // 本月第一天是星期幾
+					//item.date拿掉 -1
+					let dayDiv = document.querySelector(`[box-id="${firstDay + item.date  }"]`);
+					// 針對同一天的每個 note
+					item.todoList.forEach((note) => {
+						let elementDiv = document.createElement('div');
+						elementDiv.innerHTML = `<span>${note.startTime}&nbsp;${note.todo}</span>`;
+						/* style */
+						elementDiv.style.backgroundColor = note.color;
+						elementDiv.style.borderRadius = "4px";
+						elementDiv.style.paddingLeft = "4px";
+						elementDiv.style.margin = "4px 0";
+						elementDiv.style.color = "white";
+						elementDiv.style.cursor = "pointer";
+
+						elementDiv.onclick = function () {
+							updateNoteModal(item.id, item.year, item.month, item.date, JSON.stringify(note));
+
+						}
+						dayDiv.appendChild(elementDiv);
+					})
+				}
+			});
+		}
+
+		/* 跳到上個月 */
+		function jumpToPrevMonth() {
+			let month = date.getMonth();
+			if (month === 0) {
+				date = new Date(date.getFullYear() - 1, 11);
+			} else {
+				date = new Date(date.getFullYear(), date.getMonth() - 1);
+			}
+			$g('.container-fluid').classList.add('flip-reverse');
+
+			renderNotes()
+
+			setTimeout(function () {
+				$g('.container-fluid').classList.remove('flip-reverse');
+			}, 200);
+			// renderCalendar();
+		}
+
+		/* 跳到下個月 */
+		function jumpToNextMonth() {
+			let month = date.getMonth();
+			if (month === 11) {
+				date = new Date(date.getFullYear() + 1, 0);
+			} else {
+				date = new Date(date.getFullYear(), date.getMonth() + 1);
+			}
+			$g('.container-fluid').classList.add('flip');
+
+			renderNotes()
+			
+			setTimeout(function () {
+				$g('.container-fluid').classList.remove('flip');
+			}, 200);
+			// renderCalendar();
+		}
+
+		/* 更新目前表格時間日期等等 */
+		function initForm() {
+			let tmpDate = new Date();
+			/* 新增行事曆的地方預設填入今天日期 */
+			$g('input[id="date"]').value = `${tmpDate.getFullYear()}-${(tmpDate.getMonth() + 1).toString().padStart(2, 0)}-${tmpDate.getDate().toString().padStart(2, 0)}`;
+			$g('input[id="start-time"]').value = `${tmpDate.getHours().toString().padStart(2, 0)}:${tmpDate.getMinutes().toString().padStart(2, 0)}`;
+			$g('input[id="end-time"]').value = `${(tmpDate.getHours() + 1).toString().padStart(2, 0)}:${tmpDate.getMinutes().toString().padStart(2, 0)}`;
+		}
+
+		/* 新增行程 */
+		function addNote(event) {
+			event.preventDefault();  // 避免更新頁面
+			let date = $g('input[id="date"]').value;
+			let dateArray = date.split('-').map((ele) => parseInt(ele));
+			let startTime = $g('input[id="start-time"]').value;
+			let endTime = $g('input[id="end-time"]').value;
+			let todo = $g('textarea[id="todo"]').value;
+			let location = $g('input[id="location"]').value;
+			let color = $g('input[id="color"]').value;
+			let id = dateArray.join('');
+			// todo.innerHTML = '';
+			if (!date || !startTime || !endTime || !todo) {
+				alert('請先完成必填項目再繳交');
+				return;
+			}
+			// 如果 id 存在，代表那天已經有一個以上的 notes
+			if (idsList.includes(id)) {
+				notesList.forEach((ele) => {
+					if (ele.id === id) {
+						ele.todoList.push({
+							todo: todo,
+							startTime: startTime,
+							endTime: endTime,
+							location: location,
+							color: color,
+						});
+					}
+				});
+			} else {
+				idsList.push(id);
+				notesList.push({
+					id: id,
+					year: dateArray[0],
+					month: dateArray[1],
+					date: dateArray[2],
+					todoList: [{
+						todo: todo,
+						startTime: startTime,
+						endTime: endTime,
+						location: location,
+						color: color,
+					}]
+				});
+			}
+			document.querySelector('button[data-dismiss="modal"]').click();
+			renderNotes();
+			/* set local storage */
+			ls.setItem('notesList', JSON.stringify(notesList));
+			ls.setItem('idsList', JSON.stringify(idsList));
+		}
+
+		/* 更新行程的Modal */
+		function updateNoteModal(id, y, m, d, n) {
+
+			let note = JSON.parse(n);
+			/* 先把填過的資料都 key 到表格上，之後再顯示出來 */
+			$g('input[id="date-2"]').value = `${y}-${m.toString().padStart(2, 0)}-${d.toString().padStart(2, 0)}`;
+			$g('input[id="start-time-2"]').value = note.startTime;
+			$g('input[id="end-time-2"]').value = note.endTime;
+			$g('textarea[id="todo-2"]').value = note.todo;
+			$g('input[id="location-2"]').value = note.location;
+			$g('input[id="color-2"]').value = note.color;
+			/* 存舊的資料到 hidden 上*/
+			$g('input[id="hidden-id"]').value = id;
+			$g('input[id="hidden-item"]').value = JSON.stringify(note);
+			document.querySelector('.update-note-btn').click();
+		}
+
+		/* 刪除行程 */
+		function deleteNote(event) {
+			event.preventDefault();  // 避免更新頁面
+			/* 先取得舊的資料 */
+			let oldId = $g('input[id="hidden-id"]').value;
+			let oldItem = JSON.parse($g('input[id="hidden-item"]').value);
+			notesList.forEach((ele, i) => {
+				if (ele.id === oldId) {
+					ele.todoList.forEach((item, idx) => {
+						if (item.todo === oldItem.todo && item.startTime === oldItem.startTime && item.endTime === oldItem.endTime && item.location === oldItem.location && item.color === oldItem.color) {
+							ele.todoList.splice(idx, 1);
+							if (ele.todoList.length === 0) {
+								idsList = idsList.filter((ele) => ele !== oldId)
+								notesList.splice(i, 1);
+							}
+						}
+					});
+				}
+			});
+			document.querySelector('.close-2').click();
+			renderNotes();
+			/* set local storage */
+			ls.setItem('notesList', JSON.stringify(notesList));
+			ls.setItem('idsList', JSON.stringify(idsList));
+		}
+
+		/* 更新行程 */
+		function updateNote(event) {
+			event.preventDefault();  // 避免更新頁面
+			/* 先取得舊的資料 */
+			let oldId = $g('input[id="hidden-id"]').value;
+			let oldItem = JSON.parse($g('input[id="hidden-item"]').value);
+			notesList.forEach((ele, i) => {
+				if (ele.id === oldId) {
+					ele.todoList.forEach((item, idx) => {
+						if (item.todo === oldItem.todo && item.startTime === oldItem.startTime && item.endTime === oldItem.endTime && item.location === oldItem.location && item.color === oldItem.color) {
+							ele.todoList.splice(idx, 1);
+							if (ele.todoList.length === 0) {
+								idsList = idsList.filter((ele) => ele !== oldId)
+								notesList.splice(i, 1);
+							}
+						}
+					});
+				}
+			});
+
+			/* 取得新的資料 */
+			let date = $g('input[id="date-2"]').value;
+			let dateArray = date.split('-').map((ele) => parseInt(ele));
+			let startTime = $g('input[id="start-time-2"]').value;
+			let endTime = $g('input[id="end-time-2"]').value;
+			let todo = $g('textarea[id="todo-2"]').value;
+			let location = $g('input[id="location-2"]').value;
+			let color = $g('input[id="color-2"]').value;
+			let id = dateArray.join('');
+			if (!date || !startTime || !endTime || !todo) {
+				alert('請先完成必填項目再繳交');
+				return;
+			}
+
+			// 如果 id 存在，代表那天已經有一個以上的 notes
+			if (idsList.includes(id)) {
+				notesList.forEach((ele) => {
+					if (ele.id === id) {
+						ele.todoList.push({
+							todo: todo,
+							startTime: startTime,
+							endTime: endTime,
+							location: location,
+							color: color,
+						});
+					}
+				});
+			} else {
+				idsList.push(id);
+				notesList.push({
+					id: id,
+					year: dateArray[0],
+					month: dateArray[1],
+					date: dateArray[2],
+					todoList: [{
+						todo: todo,
+						startTime: startTime,
+						endTime: endTime,
+						location: location,
+						color: color,
+					}]
+				});
+			}
+			document.querySelector('.close-2').click();
+			renderNotes();
+			/* set local storage */
+			ls.setItem('notesList', JSON.stringify(notesList));
+			ls.setItem('idsList', JSON.stringify(idsList));
+		}
+
+	</script>
+</body>
+
+</html>

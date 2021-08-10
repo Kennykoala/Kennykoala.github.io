@@ -1,0 +1,130 @@
+body {
+    background-image: url('note.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin: 50px 0;
+
+}
+
+.calendar-container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding-top: 10px;
+
+    background-color: rgba(225, 225, 225, 0.95);
+    box-shadow: 12px 12px 7px rgba(0, 0, 0, 0.5);
+}
+.container-fluid {
+    transform-style: preserve-3d;
+    transition: 0.1s;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.prev-month:hover, .next-month:hover {
+    cursor: unset;
+}
+
+i {
+    padding: 0 10px;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+.month-title{
+    color: #8a831f;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+.month-title>span{
+    font-size: 20px;
+}
+.add-note-btn {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    padding: 0 30px;
+    font-size: 16px;
+    width: max-content;
+    transition: .5s;
+    color: #618685;
+}
+
+.add-note-btn:hover {
+    color: #405d27;
+}
+
+.add-note-btn>i {
+    padding: 0;
+}
+
+.month-div {
+    position: relative;
+    margin: 10px 0;
+    vertical-align: middle;
+}
+
+.month-title {
+    font-size: 36px;
+    text-align: center;
+}
+
+.day-string {
+    text-align: center;
+    padding: 20px 0;
+    font-weight: bold;
+}
+
+[box-id] {
+    height: calc((100vh * 0.95 - 124px) / 6);
+    overflow-y: auto;
+}
+
+.date-div>.row>.col {
+    font-size: 12px;
+    padding-left: 5px;
+}
+
+.date-div>.row>div:not(:last-child) {
+    border-top: 1px solid rgb(200, 200, 200);
+    border-right: 1px solid rgb(200, 200, 200);
+}
+
+.date-div>.row>div:last-child {
+    border-top: 1px solid rgb(200, 200, 200);
+}
+
+
+.modal-body {
+    color: gray;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+.sep-div {
+    margin-top: 20px;
+}
+
+textarea {
+    resize: none;
+}
+
+
+
+.flip {
+    transform: rotateY(90deg);
+}
+
+.flip-reverse {
+    transform: rotateY(-90deg);
+}
