@@ -979,13 +979,16 @@ footer #address {
         display: none;
         position: fixed;
         bottom: 10vh;
-        right: 3vw;
-        width: 20vw;
-        height: 65vh;
+        right: 4vw;
+        width: 50vw;
+        height: 70vh;
         background-color: #21212C;
         /* box-shadow: 5px 5px 19px #8F8B8B; */
         border-radius: 10px;
     }
+
+
+    
 }
 
 @media screen and (min-width:992px) {

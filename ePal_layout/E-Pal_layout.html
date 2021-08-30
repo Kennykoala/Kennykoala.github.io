@@ -196,8 +196,7 @@
                                 <!-- <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
                                     ONLINE
                                 </button> -->
-                                <a type="button" class="btn"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <a type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
                                     <!-- 用JS控制 -->
                                     <img src="online.png" alt="">ONLINE
                                 </a>
@@ -670,15 +669,61 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
+
     <!-- chatroom -->
-    <button class="chatbot">
-        <img src="chatroom.png" alt="">
-        <!-- <i class="fas fa-comment-dots"></i> -->
-    </button>
-    <div class="chatbox">
-        <!-- <img src="chatbox.JPG" alt="chatbox-content"> -->
-        <!-- 用massage的方式 -->
+    <div class="chatroom">
+        <button class="chatbot">
+            <img src="chatroom.png" alt="">
+            <!-- <i class="fas fa-comment-dots"></i> -->
+        </button>
+        <div class="chatbox dropdown" id="dropdown-message" data-bs-toggle="dropdown">
+            <!-- <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdown-message" id=""
+                data-stopPropagation="true" data-toggle="dropdown-menu"> -->
+
+            <div class="sidemenu">
+                <div class="sideitem">
+                    <img src="message1.png" alt="Order Messages" id="order-message" class="message-icon">
+                </div>
+                <div class="sideitem">
+                    <img src="message2.png" alt="Social Messages" id="social-message" class="message-icon">
+                </div>
+            </div>
+
+            <div class="chatListWrap">
+                
+                <div class="chatheader">
+                    <div class="title">Chat</div>
+                </div>
+
+                <div class="chatbody">
+                    <div class="chatgroup">
+                        <div class="chatitem"></div>
+                        <div class="chatitem"></div>
+                        <div class="chatitem"></div>
+                    </div>
+                </div>
+
+                <div class="chatcontent">
+                    <div class="chatcontent-header">
+                        <div class="title"></div>
+                        <div class="cross"></div>
+                    </div>
+
+                    <div class="chatcontent-body">
+                        <div class="title"></div>
+                        <div class="cross"></div>
+                    </div>
+
+                    <div class="chatcontent-footer">
+                        <div class="editor"></div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- </ul> -->
+        </div>
     </div>
+
 
 
 
