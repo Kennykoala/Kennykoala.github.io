@@ -148,7 +148,7 @@ $('.logsign-toggle').on('click', function (e) {
 //navbar隨不同頁面做變化
 $(function () {
     //href需替換
-    if (window.location.href == "http://127.0.0.1:5500/ePal/beforelogin/E-Pal_layout_beforelogin.html") {
+    if (window.location.href == "https://kennykoala.github.io/ePal_layout_beforelogin/E-Pal_layout_beforelogin.html") {
         //首頁navbar向下滑動出現
         $(window).scroll(function () {
             if ($(this).scrollTop() > 60) {
